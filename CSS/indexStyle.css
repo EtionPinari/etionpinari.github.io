@@ -1,0 +1,310 @@
+*{
+	font-family : "Courier", sans-serif;
+	color: grey;
+}
+body{
+	background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.8)), url("../resources/images/background-image.jpg");
+	background-size : cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.flexbox-container
+{
+	display: flex;
+	padding: 0px;
+	top : 0px;
+	position: sticky;
+	margin : 0px;
+	margin-bottom: 20px;
+	width: 100%;
+	background-color: orange;
+	align-items: right;
+}
+.flexitem-navbar
+{
+	position: top;
+	top : 0px;
+	margin-left: 38%;
+	margin-bottom: 20px;
+}
+.flexitem-navbar a
+{
+	margin-top: 5%;
+	text-decoration: none;
+	list-style: none;
+	margin-right: 16px;
+	font-weight: bolder;
+	font-size: 24px;
+	display:  inline-block;
+}
+.flexitem-navbar li
+{
+	border-style: solid;
+	padding: 4.5px;
+	border-width: 1.5px;
+	border-color : grey;	
+}
+
+.flexitem-buttons
+{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right : 20px;
+	top: 110px;
+}
+
+.flexitem-navbar a :hover
+{
+	padding: 4.5px;
+	border-style : solid;
+  	border-width: 1.5px;
+  	border-color : white;
+}
+
+
+.active li
+{
+	padding: 4.5px;
+	border-style : solid;
+  	border-width: 1.5px;
+  	border-color : rgba(240,240,240,0.7);		
+}
+
+
+.btn
+{
+	background-color: #9fe04a; 
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.btn-2
+{
+
+	background-color: #9fe04a; 
+	border: none;
+	color: white;
+	padding: 15px 52px 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px
+}
+.imageToInput
+{	
+	display : flex;
+	align-items: stretch;
+	margin-left : 60px;
+	align-items: center;
+	background-color: rgba(243,0,19,0.1);
+	margin-right: 20px;
+}
+
+
+.image-1 img 
+{
+	transition: transform .3s;
+}
+.image-2 img 
+{
+	transition: transform .3s;
+}
+.image-3 img 
+{
+	transition: transform .3s;
+}
+
+
+.image-1:hover img 
+{
+	transform: scale(2.5) translate(6em,0);
+}
+.image-2:hover img 
+{
+	transform: scale(2.5);
+}
+.image-3:hover img 
+{
+	transform: scale(2.5) translate(-6em,0);
+}
+
+.image-1 
+{
+	flex: 1;
+}
+
+.image-2
+{
+	flex: 1;
+}
+
+.image-3
+{
+	flex: 1;
+}
+
+.divider
+{
+	margin-top : 150px;
+}
+
+.content
+{
+	background-color: rgba(255,252,222,0.55);
+	margin-top : 120px;
+}
+.content-cont
+{
+
+	background-color: rgba(255,252,222,0.55);
+	margin-top : 24px;	
+}
+
+.content h2, h3
+{
+	font-weight: bold;
+	color : darkgreen;
+	padding-top: 30px;
+	text-align: center;
+	margin-bottom: 20px;
+	letter-spacing: 3.6px;
+}
+
+.proj-description li
+{
+	font-size: 24px;
+	color : cyan;
+	display: block;
+}
+.proj-description p
+{
+	font-size: 12000px;
+	color : lightblue;
+}
+
+.content h2
+{
+	font-size: 48px;
+}
+.content h3
+{
+	font-size: 36px;
+}
+
+.content a
+{
+	color : blue;
+	text-decoration: none;
+}
+.content p
+{
+	padding-right : 120px;
+	padding-left : 36px;
+	margin-top : 20px;
+	font-size : 24px;
+	color : black;
+}
+.content-cont h2
+{
+	font-weight: bold;
+	color : darkgreen;
+	padding-top: 30px;
+	font-size : 48px;
+	text-align: center;
+	margin-bottom: 20px;
+	letter-spacing: 3.6px;
+}
+.content-cont a
+{
+	color : blue;
+	text-decoration: none;
+}
+.content-cont p
+{
+	padding-right : 120px;
+	padding-left : 36px;
+	margin-top : 20px;
+	font-size : 24px;
+	color : black;
+}
+.content .spacer
+{
+	font-size: 1px;
+	margin : 20px;
+	color : rgba(0,0,0,0);
+}
+table
+{
+	box-decoration-break: slice;
+	align-items: center;
+	margin-left : 17%;
+	align-self: center;
+	background-color: rgba(231,231,231,0.2);
+	border-color: red;
+	border-width: 10px;
+	/*background-color: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,1));*/
+}
+td
+{
+	font-size : 20px;
+	position: relative;
+	text-align: center;
+	color : brown;
+	font-weight: bold;
+	margin-top:  0px;
+	margin-bottom: 0px;
+	/*margin-right : 5px;*/
+	/*margin-left : 5px;*/
+}
+th
+{
+	font-size : 28px;
+	color : green;
+	font-weight: bolder;
+}
+
+.rb
+{
+	color : red;
+	font-weight: bold;
+}
+.small
+{
+	font-size:12px;
+	color: black;
+}
+.br
+{
+	color: black;
+	font-weight: bold;
+}
+.liner:before
+{
+	content:"";
+	display: block;
+	background: #8f7839;
+	position: absolute;
+	width : 2px;
+	height : 53px;
+	color : blue;
+	margin-right : 10px;
+	margin-bottom: 0px;
+	margin-left : -5px;
+}
+
+
+
+
+.title-table
+{ 
+	margin-left : 144px;
+	text-align: center;
+	color : black;
+}
