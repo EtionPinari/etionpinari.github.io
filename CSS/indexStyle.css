@@ -200,7 +200,7 @@ table
 
 
 
-@media (max-width: 680px){ /* if in telephone screen*/
+@media only screen and (max-width: 680px){ /* if in telephone screen*/
 	.flexbox-container
 	{
 		margin : 0px;
@@ -261,7 +261,7 @@ table
 	}
 }
 
-@media (min-width:680px){ /*	IF ON COMPUTER 			*/
+@media only screen and (min-width:680px){ /*	IF ON COMPUTER 			*/
 	
 	.content p
 	{
