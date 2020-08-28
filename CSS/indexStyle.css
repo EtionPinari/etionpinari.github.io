@@ -373,9 +373,15 @@ table
 		flex: 1;
 	}
 
-	.divider
+	.content .divider
 	{
-		margin-top : 150px;
+		font-size: 1px;
+		margin-bottom : 550px;
+	}
+	.content .smalldivider
+	{
+		font-size : 1px;
+		margin-bottom : 225px;
 	}
 	table{
 		table-layout: fixed;	
