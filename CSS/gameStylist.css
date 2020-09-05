@@ -1,0 +1,39 @@
+@media only screen and (min-width : 768px){
+
+	.screenContainer
+	{
+		/*position: relative;*/
+		border : red solid 5px;
+		padding: 10px;
+		/*transform : scale(0.5);*/
+		/* margin: 240px 20px 20px 20px; */
+		background-color : #fafafa;
+		/* margin : 5em 30%; */
+		margin : 2em 0em;
+		align-content: center;
+		/* text-align: center; */
+		height : 720px;
+		width : 1280px;
+		position : relative;
+	}
+	#game-1
+	{
+		position : center;
+		/* width :  1280px; */
+		/* height : 720px; */
+		color : red;
+	}
+	.darkened
+	{
+		background-image: linear-gradient(rgba(0,0,0,0.99), rgba(0,0,0,0.88));
+		background-size : cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.content-black
+{
+	background-color: rgba(232,222,202,0.35);
+	margin-top : 120px;
+}
+}

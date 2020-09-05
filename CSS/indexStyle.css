@@ -2,17 +2,19 @@
 	font-family : "Courier", sans-serif;
 	color: grey;
 }
-body{
+.whitened{
 	background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.8)), url("../resources/images/background-image.jpg");
 	background-size : cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
 a
 {
 	text-decoration: none;
 	color : blue;
 }
+
 .flexitem-buttons
 {
 	display: flex;
@@ -85,9 +87,9 @@ a
 	color : rgba(0,0,0,0);
 }
 
-.content
+.content-white
 {
-	background-color: rgba(255,252,222,0.55);
+	background-color: rgba(232,222,202,0.55);
 	margin-top : 120px;
 }
 .content-cont
