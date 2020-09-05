@@ -2,7 +2,11 @@ let BASE_FORCE = 55; //95
 let JUMP_FORCE = 60; //120
 let gravityConstant = 0.8;
 let frictionCoefficient = 0.3;
-
+let maxFrames = 4;
+const N = 1;
+const E = 2;
+const W = 3;
+const S = 4;
 class Player{
     constructor(GAME_WIDTH, GAME_HEIGHT){
         this.GAME_HEIGHT = GAME_HEIGHT;
@@ -20,17 +24,19 @@ class Player{
             y : GAME_HEIGHT*4/5 - this.height
         }
 
-        this.lastPosition = {
-            x : 0,
-            y : 0
-        }
-
         this.speed = {
             x : 0,
             y : 0
         }
 
         this.lastPlatform = null;
+        
+        this.lastPosition = {
+            x : 0,
+            y : 0
+        }
+        
+        this.internalCounter = maxFrames - 1;
     }
     applyGravity(){
         if(this.grounded == false){
@@ -67,6 +73,7 @@ class Player{
         //apply gravity
         this.applyGravity(deltaTime);
         //change positions
+        this.updateLastPosition();
         this.position.x += this.speed.x / deltaTime;
         this.position.y += this.speed.y / deltaTime;
         //check if within the boundaries of the game
@@ -95,6 +102,14 @@ class Player{
 
     }
 
+    updateLastPosition(){
+        this.internalCounter++;
+        if(this.internalCounter == maxFrames){
+            this.internalCounter = 0;
+            this.lastPosition = this.position;
+        }
+    }
+
     isMovingRight(){
         // console.log("MOVING RIGHT: SPEED IS" + this.speed.x);
         if(this.speed.x > 0)
@@ -119,10 +134,49 @@ class Player{
     
     collidedWith(otherObject){
         if(!this.grounded){
-            this.grounded = true;
-            this.position.y = otherObject.position.y - this.height - 0.1  ;
+            // this.grounded = true;
+            let collidedNEWS = this.collisionNEWS(otherObject);
+            switch(collidedNEWS){
+                case N:
+                    this.position.y = otherObject.position.y - this.height - 0.1  ;
+                    this.grounded = true;
+                    break;
+                case E:
+                    this.position.x = otherObject.position.x - 0.1;
+                    break;
+                case W:
+                    this.position.x = otherObject.position.x + otherObject.width + this.width + 1;
+                    break;
+                case S:
+                    this.position.y = otherObject.position.y + otherObject.height + 0.1; 
+                    break;
+            }
+            // alert(collidedNEWS);
             this.lastPlatform = otherObject;
         }
+    }
+
+    collisionNEWS(otherObject){
+        // alert(this.lastPosition.x);
+        //checks whether he collided in the north east south or west
+        if(this.lastPosition.x < otherObject.position.x ){
+            // if(this.position.x + this.width >= otherObject.position.x && this.position.x + this.width <= otherObject.position.x + otherObject.width) 
+                return E;
+        }
+
+        if(this.lastPosition.x + this.width > otherObject.position.x + otherObject.width){
+            // if(this.position.x <= otherObject.position.x + otherObject.width && this.position.x >= otherObject.position.x){
+                return W;
+            // }
+        }
+
+        if(this.lastPosition.y + this.height <= otherObject.position.y){
+            
+            return S;
+        }
+
+        return N;
+
     }
 }
 
