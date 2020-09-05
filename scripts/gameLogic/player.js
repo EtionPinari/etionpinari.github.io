@@ -139,17 +139,24 @@ class Player{
             switch(collidedNEWS){
                 case N:
                     this.position.y = otherObject.position.y - this.height - 0.1  ;
+                    this.lastPosition.y = this.position.y ;
                     this.grounded = true;
                     break;
                 case E:
-                    this.position.x = otherObject.position.x - 0.1;
+                    this.position.x = otherObject.position.x - 0.1; 
+                    this.lastPosition.x = this.position.x;
                     break;
                 case W:
                     this.position.x = otherObject.position.x + otherObject.width + this.width + 1;
+                    this.lastPosition.x = this.position.x;
                     break;
                 case S:
-                    this.position.y = otherObject.position.y + otherObject.height + 0.1; 
+                    this.position.y = otherObject.position.y + otherObject.height + 1; 
+                    this.lastPosition.y = this.position.y;
+                    this.speed.y = this.speed.y / 2;
                     break;
+                case -1:
+                    alert("Error");
             }
             // alert(collidedNEWS);
             this.lastPlatform = otherObject;
@@ -169,14 +176,14 @@ class Player{
                 return W;
             // }
         }
-
-        if(this.lastPosition.y + this.height <= otherObject.position.y){
-            
-            return S;
-        }
-
+        if(this.lastPosition.y <= otherObject.position.y )
         return N;
-
+        // if(this.lastPosition.y >= otherObject.position.y + otherObject.height-1){
+            return S;
+        // }
+        
+        // alert( `this last Position : ${this.lastPosition.y} and otherObject floor ${otherObject.position.y + otherObject.height-1}`);
+        // return -1;
     }
 }
 
