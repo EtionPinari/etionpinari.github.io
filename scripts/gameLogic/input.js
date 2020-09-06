@@ -37,6 +37,7 @@ class Input{
             break;
             case downArrow:
             case s:
+                player.crouch();
                 event.preventDefault();
             break;
         }
@@ -45,6 +46,11 @@ class Input{
         //when key released, stop moving
         addEventListener('keyup', (event) => {
             switch(event.keyCode){
+                case upArrow:
+                case w:
+                case spaceBar:
+                    player.slowJump();
+                    break;
                 case leftArrow:
                 case a:
                     if(player.isMovingLeft())
@@ -56,8 +62,11 @@ class Input{
                         player.stop();
                         // alert("Called player stop");
                     }
-                        
-                break;
+                    break;
+                case downArrow:
+                case s:
+                    player.stopCrouching();
+                    break;
             }
         });
     }

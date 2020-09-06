@@ -1,4 +1,4 @@
-let BASE_FORCE = 55; //95
+
 let JUMP_FORCE = 60; //120
 let gravityConstant = 0.8;
 let frictionCoefficient = 0.3;
@@ -11,8 +11,11 @@ class Player{
     constructor(GAME_WIDTH, GAME_HEIGHT){
         this.GAME_HEIGHT = GAME_HEIGHT;
         this.GAME_WIDTH = GAME_WIDTH;
+        this.BASE_FORCE = 75; //95
+        this.isCrouching = false;
         
-        
+        this.visible = true;
+
         this.width = 10;
         this.height = 30;
 
@@ -30,7 +33,6 @@ class Player{
         }
 
         this.lastPlatform = null;
-        
         this.lastPosition = {
             x : 0,
             y : 0
@@ -46,11 +48,11 @@ class Player{
              
     }
     moveRight(){
-            this.speed.x = BASE_FORCE;
+            this.speed.x = this.BASE_FORCE;
     }
 
     moveLeft(){
-            this.speed.x = -BASE_FORCE;          
+            this.speed.x = -this.BASE_FORCE;          
     }
 
     jump(){
@@ -64,8 +66,28 @@ class Player{
         this.speed.x = 0;
     }
 
+    crouch(){
+        if(this.grounded && !this.isCrouching){
+            this.position.y = this.position.y + this.height*0.32;//1-0.68
+            this.height = this.height*0.68;
+            this.BASE_FORCE = this.BASE_FORCE*0.58;
+            this.isCrouching = true;
+        }
+    }
+
+    stopCrouching(){
+        if(this.grounded && this.isCrouching)
+        {
+        this.isCrouching = false;
+        this.height = this.height/0.68;
+        this.BASE_FORCE = this.BASE_FORCE/0.58;
+        this.position.y = this.position.y - this.height*.32;
+        }
+    }
+
 
     update(deltaTime){
+        if(!this.visible) return;
         if(!deltaTime) return;
         
         //check if is still colliding
@@ -81,6 +103,7 @@ class Player{
     }
 
     draw(context){
+        if(!this.visible) return;
         context.fillStyle = "#FFC0CB";
         context.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
@@ -143,11 +166,11 @@ class Player{
                     this.grounded = true;
                     break;
                 case E:
-                    this.position.x = otherObject.position.x - 0.1; 
+                    this.position.x = otherObject.position.x - 0.01; 
                     this.lastPosition.x = this.position.x;
                     break;
                 case W:
-                    this.position.x = otherObject.position.x + otherObject.width + this.width + 1;
+                    this.position.x = otherObject.position.x + otherObject.width + this.width + 0.01;
                     this.lastPosition.x = this.position.x;
                     break;
                 case S:
@@ -160,6 +183,12 @@ class Player{
             }
             // alert(collidedNEWS);
             this.lastPlatform = otherObject;
+        }
+    }
+
+    slowJump(){
+        if(this.speed.y < -JUMP_FORCE/2){
+            this.speed.y = this.speed.y/2;
         }
     }
 
@@ -184,6 +213,11 @@ class Player{
         
         // alert( `this last Position : ${this.lastPosition.y} and otherObject floor ${otherObject.position.y + otherObject.height-1}`);
         // return -1;
+    }
+
+    killed(){
+        // this.width = 2*this.width;
+        this.visible = false;
     }
 }
 

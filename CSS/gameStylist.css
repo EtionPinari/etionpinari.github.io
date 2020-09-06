@@ -31,6 +31,11 @@
 		background-position: center;
 	}
 
+	.image_files
+	{
+		display: none;
+	}
+
 	.content-black
 {
 	background-color: rgba(232,222,202,0.35);

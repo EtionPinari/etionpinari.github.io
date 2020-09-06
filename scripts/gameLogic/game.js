@@ -1,13 +1,14 @@
-import {makeRed, removeRed, changeBodyTag, Ground} from './ground.js';
+import {changeBodyTag, Ground} from './ground.js';
 import {Player} from './player.js';
 import { Input } from './input.js';
 import {CollisionDetector} from './collisionDetector.js'
 import {PlatformGenerator} from './platformGenerator.js'
+import {EnemyBall} from './enemyBall.js';
 
 
-
-
-
+const frame1 = document.getElementById('frame1');
+console.log(frame1);
+const numberOfPlatforms = 0;
 
 
 
@@ -34,7 +35,7 @@ context.fillRect(0,0,GAME_WIDTH,GAME_HEIGHT);
 //generate world
 let ground = new Ground(GAME_WIDTH,GAME_HEIGHT);
 let platformGenerator = new PlatformGenerator(GAME_WIDTH,GAME_HEIGHT, ground);
-platformGenerator.buildPlatform(30);
+platformGenerator.buildPlatform(numberOfPlatforms);
 //generate player and its controls
 let player = new Player(GAME_WIDTH,GAME_HEIGHT);
 let inputController = new Input(player);
@@ -42,10 +43,10 @@ let lastTime = 0;
 
 let collisionDetector = new CollisionDetector();
 
+let enemyBall = new EnemyBall(GAME_WIDTH, GAME_HEIGHT);
 
-
-
-
+let gameBackgroundColor = "#87CEEB"; 
+let lost = false;
 gameLoop();
 
 function gameLoop(timeStamp){
@@ -54,30 +55,82 @@ function gameLoop(timeStamp){
     lastTime = timeStamp;
     //remove last drawing
     context.clearRect(0,0,GAME_WIDTH, GAME_HEIGHT);
-    context.fillStyle = "#87CEEB"
+    context.fillStyle = gameBackgroundColor;
     context.fillRect(0,0,GAME_WIDTH,GAME_HEIGHT);
     // check collisions
-    if(collisionDetector.checkCollision(player,ground))
-        player.collidedWith(ground);
+    
+    if(collisionDetector.checkCollision(enemyBall,ground)){
+        enemyBall.collidedWith(ground);
+    }
+
     let allPlatforms = platformGenerator.getAllPlatformsArray();
-    for(let i = 0; i<allPlatforms.length; i++){
-        if(collisionDetector.checkCollision(player,allPlatforms[i])){
-            player.collidedWith(allPlatforms[i]);
+        
+    if(!lost){
+        if(collisionDetector.checkCollision(player,ground))
+        player.collidedWith(ground);
+    
+        if(collisionDetector.checkCollision(enemyBall, player)){
+            player.killed();
+            lost = true;
+        }
+        for(let i = 0; i<allPlatforms.length; i++){
+            if(collisionDetector.checkCollision(player,allPlatforms[i])){
+                player.collidedWith(allPlatforms[i]);
+                break;
+            }
         }
     }
-    // update positions
-    player.update(deltaTime);
+    
 
+    for(let i = 0; i<allPlatforms.length; i++){
+        if(collisionDetector.checkCollision(enemyBall,allPlatforms[i])){
+            enemyBall.collidedWith(allPlatforms[i]);
+            break;
+        }
+    }
+    if(!lost){
+        // update positions
+        player.update(deltaTime);
+        player.draw(context);
+    }
+    
+    enemyBall.update(deltaTime);
     // update drawings
     context.fillStyle = "black";
     ground.draw(context);
     platformGenerator.draw(context);
-    player.draw(context);
+    enemyBall.draw(context);
+    
+    if(lost){
+        // frame1.style.display = "inline";
+        showLosingScreen(context,frame1.src)
+    }
 
     requestAnimationFrame(gameLoop);
 }
 
+function showLosingScreen(context, url){
+    if(gameBackgroundColor != "blue")
+        gameBackgroundColor = "blue";
+    
+    var image = new Image();
 
+    // url.addEventListener('load', e => {
+    //     context.drawImage(url, 33, 71, 104, 124, 21, 20, 87, 104);
+    //   });
+
+    image.onload = function()
+    {
+    //     // console.log(image);
+        context.drawImage(image,GAME_WIDTH/2,GAME_HEIGHT/2,200,200);
+        // context.drawImage(image,0,0);
+    }
+
+    image.onerror=function(){alert("image " + image.src + "not found");} 
+    
+    // Now set the source of the image that we want to load
+    image.src = url;
+}
 
 
 
