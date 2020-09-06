@@ -5,17 +5,13 @@ import {CollisionDetector} from './collisionDetector.js'
 import {PlatformGenerator} from './platformGenerator.js'
 import {EnemyBall} from './enemyBall.js';
 
-
+let frameCounter = 1;
+const frameMultiplier = 10;
 const frame1 = document.getElementById('frame1');
-console.log(frame1);
-const numberOfPlatforms = 10;
-
-
-
-
-
-
-
+const frame2 = document.getElementById('frame2');
+const frame3 = document.getElementById('frame3');
+// console.log(frame1);
+const numberOfPlatforms = 30;
 
 
 const contDiv = document.querySelector(".content-white");
@@ -103,33 +99,44 @@ function gameLoop(timeStamp){
     
     if(lost){
         // frame1.style.display = "inline";
-        showLosingScreen(context,frame1.src)
+        showLosingScreen(context)
     }
 
     requestAnimationFrame(gameLoop);
 }
 
-function showLosingScreen(context, url){
+function showLosingScreen(context){
     if(gameBackgroundColor != "blue")
         gameBackgroundColor = "blue";
-    
-    var image = new Image();
+        
 
-    // url.addEventListener('load', e => {
-    //     context.drawImage(url, 33, 71, 104, 124, 21, 20, 87, 104);
-    //   });
-
-    image.onload = function()
-    {
-    //     // console.log(image);
-        context.drawImage(image,GAME_WIDTH/2,GAME_HEIGHT/2,200,200);
-        // context.drawImage(image,0,0);
+    if(frameCounter >= 1 && frameCounter <= frameMultiplier){
+        context.drawImage(frame1, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
+    } else if (frameCounter >= 1 + frameMultiplier && frameCounter <= 2*frameMultiplier){
+        context.drawImage(frame2, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
+    } else {
+        context.drawImage(frame3, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
+        if(frameCounter == 3*frameMultiplier)
+            frameCounter = 0;
     }
+    context.lineWidth = 3;
+    context.strokeRect(GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
+        // switch(frameCounter){
+        //     case 1*frameMultiplier:
+        //         context.drawImage(frame1, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
+        //         break;
+        //     case 2*frameMultiplier:
+        //         context.drawImage(frame2, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
+        //         break;
+        //     case 3 + 3*frameMultiplier:
+        //         context.drawImage(frame3, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
+        //         frameCounter = 1;
+        //         break;
+        // }
+        //147*3 ANDD 26*3
+        // context.drawImage(frame1, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
+        frameCounter++;
 
-    image.onerror=function(){alert("image " + image.src + "not found");} 
-    
-    // Now set the source of the image that we want to load
-    image.src = url;
 }
 
 
