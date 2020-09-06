@@ -8,7 +8,7 @@ import {EnemyBall} from './enemyBall.js';
 
 const frame1 = document.getElementById('frame1');
 console.log(frame1);
-const numberOfPlatforms = 0;
+const numberOfPlatforms = 10;
 
 
 
