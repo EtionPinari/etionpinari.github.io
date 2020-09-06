@@ -1,4 +1,4 @@
-
+//
 const maxFrames = 4;
 const N = 1;
 const E = 2;
