@@ -103,7 +103,7 @@ function gameLoop(timeStamp){
     
     if(lost){
         // frame1.style.display = "inline";
-        // showLosingScreen(context,frame1.src)
+        showLosingScreen(context,frame1.src)
     }
 
     requestAnimationFrame(gameLoop);
