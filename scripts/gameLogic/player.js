@@ -23,8 +23,8 @@ class Player{
         this.grounded = false;
 
         this.position = {
-            x : GAME_WIDTH/3 - this.width,
-            y : GAME_HEIGHT*4/5 - this.height
+            x : GAME_WIDTH/5 - this.width,
+            y : GAME_HEIGHT*4/5
         }
 
         this.speed = {

@@ -4,15 +4,18 @@ import { Input } from './input.js';
 import {CollisionDetector} from './collisionDetector.js'
 import {PlatformGenerator} from './platformGenerator.js'
 import {EnemyBall} from './enemyBall.js';
+import {CoinSpawner} from './coinSpawner.js';
 
 let frameCounter = 1;
 const frameMultiplier = 10;
 const frame1 = document.getElementById('frame1');
 const frame2 = document.getElementById('frame2');
 const frame3 = document.getElementById('frame3');
+const coin = document.getElementById('coin');
 // console.log(frame1);
 const numberOfPlatforms = 30;
-
+const numberOfCoins = 20;
+const scoreIncreaser = 100;
 
 const contDiv = document.querySelector(".content-white");
 const GAME_WIDTH = 1280;
@@ -35,6 +38,13 @@ platformGenerator.buildPlatform(numberOfPlatforms);
 //generate player and its controls
 let player = new Player(GAME_WIDTH,GAME_HEIGHT);
 let inputController = new Input(player);
+let coinsSpawner = [];
+for(let i = 0; i < numberOfCoins; i++){
+    coinsSpawner.push(
+        new CoinSpawner(GAME_WIDTH,GAME_HEIGHT,coin)
+    );
+    coinsSpawner[i].putOnPlatform(platformGenerator.getRandomPlatform());
+} 
 let lastTime = 0;
 
 let collisionDetector = new CollisionDetector();
@@ -43,6 +53,7 @@ let enemyBall = new EnemyBall(GAME_WIDTH, GAME_HEIGHT);
 
 let gameBackgroundColor = "#87CEEB"; 
 let lost = false;
+let score = 0;
 gameLoop();
 
 function gameLoop(timeStamp){
@@ -54,16 +65,24 @@ function gameLoop(timeStamp){
     context.fillStyle = gameBackgroundColor;
     context.fillRect(0,0,GAME_WIDTH,GAME_HEIGHT);
     // check collisions
-    
     if(collisionDetector.checkCollision(enemyBall,ground)){
         enemyBall.collidedWith(ground);
     }
 
+
     let allPlatforms = platformGenerator.getAllPlatformsArray();
-        
+    let double = enemyBall.getDouble()
     if(!lost){
+
+        if(double != null){
+            if(collisionDetector.checkCollision(double, player)){
+                player.killed();
+                lost = true;
+            }
+        }
+        
         if(collisionDetector.checkCollision(player,ground))
-        player.collidedWith(ground);
+            player.collidedWith(ground);
     
         if(collisionDetector.checkCollision(enemyBall, player)){
             player.killed();
@@ -75,6 +94,13 @@ function gameLoop(timeStamp){
                 break;
             }
         }
+        for(let i = 0; i<coinsSpawner.length; i++){
+                if(collisionDetector.checkCollision(coinsSpawner[i],player)){
+                    coinsSpawner[i].kill();
+                    score += 100;
+                    console.log(score);
+                }
+        }
     }
     
 
@@ -83,28 +109,63 @@ function gameLoop(timeStamp){
             enemyBall.collidedWith(allPlatforms[i]);
             break;
         }
+    }    
+    if(double != null){
+        for(let i = 0; i<allPlatforms.length; i++){
+            if(collisionDetector.checkCollision(double,allPlatforms[i])){
+                double.collidedWith(allPlatforms[i]);
+                break;
+            }
+
+        }
     }
     if(!lost){
         // update positions
         player.update(deltaTime);
         player.draw(context);
     }
-    
+    for(let i =0 ; i<coinsSpawner.length; i++){
+        coinsSpawner[i].update(deltaTime);
+        coinsSpawner[i].draw(context);
+    }
+
     enemyBall.update(deltaTime);
     // update drawings
     context.fillStyle = "black";
     ground.draw(context);
+    // coinSpawner.draw(context);
     platformGenerator.draw(context);
     enemyBall.draw(context);
     
-    if(lost){
+    context.font = "20px Arial sans-serif";
+    context.fillStyle = "black";
+    context.fillText(`Score : ${score}`,GAME_WIDTH-180,20);
+    
+    
+
+    if(score == numberOfCoins*scoreIncreaser){
+        showWinScreen(context);
+    } else if(lost){
         // frame1.style.display = "inline";
         showLosingScreen(context)
+    }
+
+    if(score >= numberOfCoins*scoreIncreaser/2){
+        enemyBall.enrage();
+    }
+    if(score >= numberOfCoins*scoreIncreaser*0.60){
+        enemyBall.duplicate();
     }
 
     requestAnimationFrame(gameLoop);
 }
 
+
+function showWinScreen(context){
+    context.font = "60px Arial sans-serif";
+    context.fillStyle = "black";
+    context.fillText(`YOU WON!`,GAME_WIDTH/2-180,GAME_HEIGHT/4-52);
+}
 function showLosingScreen(context){
     if(gameBackgroundColor != "blue")
         gameBackgroundColor = "blue";
@@ -121,21 +182,7 @@ function showLosingScreen(context){
     }
     context.lineWidth = 3;
     context.strokeRect(GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
-        // switch(frameCounter){
-        //     case 1*frameMultiplier:
-        //         context.drawImage(frame1, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
-        //         break;
-        //     case 2*frameMultiplier:
-        //         context.drawImage(frame2, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
-        //         break;
-        //     case 3 + 3*frameMultiplier:
-        //         context.drawImage(frame3, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
-        //         frameCounter = 1;
-        //         break;
-        // }
-        //147*3 ANDD 26*3
-        // context.drawImage(frame1, GAME_WIDTH/2-200, GAME_HEIGHT/4-52, 348, 52);
-        frameCounter++;
+    frameCounter++;
 
 }
 
@@ -249,5 +296,4 @@ function showLosingScreen(context){
 // gameScreen.addEventListener('mouseout' , (e) => alert("You have removed your mouse from this class"));
 
 // gameScreen.addEventListener('mouseout', (e) => resetEffects());
-
 

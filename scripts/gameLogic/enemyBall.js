@@ -20,8 +20,25 @@ class EnemyBall{
         this.GAME_WIDTH = GAME_WIDTH;
         this.lastPosition = this.position;
         this.internalCounter = 3;
+        this.double = null;
     }
-
+    enrage(){
+        if(this.speed.x == 40){
+            this.speed.x = 80;
+            this.speed.y = 80;
+        }
+    }
+    //creates a copy of itself saved in this.double
+    //can only store one
+    duplicate(){
+        if(this.double == null){
+            this.double = new EnemyBall(this.GAME_WIDTH,this.GAME_HEIGHT);
+            this.double.position.x = this.position.x;
+            this.double.position.y = this.position.y;
+            this.double.speed.x = -this.speed.x;
+        //no speed y on purpose    
+        }
+    }
     update(deltaTime){
         if(!deltaTime) return;
         this.limitEdges();        
@@ -29,7 +46,9 @@ class EnemyBall{
         this.updateLastPosition();
         this.position.x += this.speed.x / deltaTime;
         this.position.y += this.speed.y / deltaTime;
-    
+        if(this.double != null){
+            this.double.update(deltaTime);
+        }
 
     }
 
@@ -69,8 +88,13 @@ class EnemyBall{
       context.lineWidth = 2;
       context.strokeStyle = '#003300';
       context.stroke();
+      if(this.double != null){
+          this.double.draw(context);
+      }
     }
-
+    getDouble(){
+        return this.double;
+    }
 
     collidedWith(otherObject){
         if(!this.grounded){

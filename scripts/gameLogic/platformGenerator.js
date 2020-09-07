@@ -34,7 +34,9 @@ class PlatformGenerator{
     setPlatformWidth( platformWidth ){
         this.maxWidth = platformWidth;
     }
-    
+    getRandomPlatform(){
+        return this.allPlatforms[  (parseInt(this.allPlatforms.length * Math.random())) ];
+    }
     draw(context){
         for(let i = 0 ; i< this.allPlatforms.length; i++){
    
