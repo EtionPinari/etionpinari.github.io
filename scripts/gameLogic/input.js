@@ -7,9 +7,17 @@ const w = 87;
 const a = 65;
 const s = 83;
 const d = 68;
+const p = 80;
+const GAME_CONSTANT  = {
+    PAUSE : 0,
+    RUNNING : 1,
+    MENU : 2,
+    GAMEOVER : 3
+};
 class Input{
-    constructor(player){
+    constructor(player, gameState){
         //when key down start moving
+        this.gameState = gameState;
         addEventListener('keydown',
         (event) => {
             // alert(event);
@@ -40,7 +48,10 @@ class Input{
                 player.crouch();
                 event.preventDefault();
             break;
-        }
+            case p:
+                this.togglePause();
+                break;
+            }
         }
         );
         //when key released, stop moving
@@ -69,6 +80,14 @@ class Input{
                     break;
             }
         });
+    }
+
+    togglePause(){
+        if(this.gameState == GAME_CONSTANT.PAUSE){
+            this.gameState = GAME_CONSTANT.RUNNING;
+        } else if (this.gameState == GAME_CONSTANT.RUNNING){
+            this.gameState = GAME_CONSTANT.PAUSE;
+        }
     }
 }
 export {Input};

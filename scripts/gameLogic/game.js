@@ -6,15 +6,24 @@ import {PlatformGenerator} from './platformGenerator.js'
 import {EnemyBall} from './enemyBall.js';
 import {CoinSpawner} from './coinSpawner.js';
 
+const GAME_CONSTANT  = {
+    PAUSE : 0,
+    RUNNING : 1,
+    MENU : 2,
+    GAMEOVER : 3
+};
+
 let frameCounter = 1;
 const frameMultiplier = 10;
 const frame1 = document.getElementById('frame1');
 const frame2 = document.getElementById('frame2');
 const frame3 = document.getElementById('frame3');
 const coin = document.getElementById('coin');
+const noMushroom = document.getElementById('noMushroom');
+const mushroom = document.getElementById('mushroom');
 // console.log(frame1);
-const numberOfPlatforms = 30;
-const numberOfCoins = 20;
+const numberOfPlatforms = 35;
+const numberOfCoins = 30;
 const scoreIncreaser = 100;
 
 const contDiv = document.querySelector(".content-white");
@@ -26,18 +35,23 @@ canvasAttributes.width = GAME_WIDTH;
 canvasAttributes.height = GAME_HEIGHT;
 const gameScreen = document.querySelector(".screenContainer");
 gameScreen.addEventListener('click', (e) => changeBodyTag(contDiv));
+let restart = false;    
+playGame()
 
+function playGame(){
+
+let gameState = GAME_CONSTANT.RUNNING;
 let canvas = document.getElementById("game-1");
 let context = canvas.getContext('2d');
 context.fillStyle = "#87CEEB"
 context.fillRect(0,0,GAME_WIDTH,GAME_HEIGHT);
 //generate world
 let ground = new Ground(GAME_WIDTH,GAME_HEIGHT);
-let platformGenerator = new PlatformGenerator(GAME_WIDTH,GAME_HEIGHT, ground);
+let platformGenerator = new PlatformGenerator(GAME_WIDTH,GAME_HEIGHT, ground, noMushroom, mushroom);
 platformGenerator.buildPlatform(numberOfPlatforms);
 //generate player and its controls
 let player = new Player(GAME_WIDTH,GAME_HEIGHT);
-let inputController = new Input(player);
+let inputController = new Input(player, gameState);
 let coinsSpawner = [];
 for(let i = 0; i < numberOfCoins; i++){
     coinsSpawner.push(
@@ -69,6 +83,11 @@ function gameLoop(timeStamp){
         enemyBall.collidedWith(ground);
     }
 
+    gameState = inputController.gameState;
+    if(gameState == GAME_CONSTANT.PAUSE){
+        context.fillStyle = "rgba(0,20,20,0.3)"
+        context.fillRect(0,0,GAME_WIDTH,GAME_HEIGHT);
+    }
 
     let allPlatforms = platformGenerator.getAllPlatformsArray();
     let double = enemyBall.getDouble()
@@ -121,14 +140,18 @@ function gameLoop(timeStamp){
     }
     if(!lost){
         // update positions
+        if(gameState != GAME_CONSTANT.PAUSE)
         player.update(deltaTime);
         player.draw(context);
     }
     for(let i =0 ; i<coinsSpawner.length; i++){
+        
+        if(gameState != GAME_CONSTANT.PAUSE)
         coinsSpawner[i].update(deltaTime);
         coinsSpawner[i].draw(context);
     }
 
+    if(gameState != GAME_CONSTANT.PAUSE)
     enemyBall.update(deltaTime);
     // update drawings
     context.fillStyle = "black";
@@ -138,8 +161,9 @@ function gameLoop(timeStamp){
     enemyBall.draw(context);
     
     context.font = "20px Arial sans-serif";
-    context.fillStyle = "black";
+    context.fillStyle = "#FFDF00";
     context.fillText(`Score : ${score}`,GAME_WIDTH-180,20);
+    context.fillText('Press P to pause', GAME_WIDTH-180, 40);
     
     
 
@@ -156,8 +180,8 @@ function gameLoop(timeStamp){
     if(score >= numberOfCoins*scoreIncreaser*0.60){
         enemyBall.duplicate();
     }
-
-    requestAnimationFrame(gameLoop);
+    if(!restart)
+        requestAnimationFrame(gameLoop);
 }
 
 
@@ -189,111 +213,4 @@ function showLosingScreen(context){
 
 
 
-
-
-
-// let canvas = document.getElementById("game-1");
-// let context = canvas.getContext('2d');
-// canvas.style.backgroundColor = "black";
-// context.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-
-// context.fillStyle = '#af0a0a';
-// // context.fillRect(20, 0, 20, 20);
-
-// let ground = new Ground(GAME_WIDTH, GAME_HEIGHT);
-// ground.draw(context);
-
-// let firstPlayer = new Player(GAME_WIDTH,GAME_HEIGHT);
-// firstPlayer.draw(context);
-
-// let lastTime = 0
-// let inputListener = new Input(firstPlayer);
-
-// let collisionDetector = new CollisionDetector();
-
-// let platformGenerator = new PlatformGenerator(GAME_WIDTH, GAME_HEIGHT, ground);
-// platformGenerator.buildPlatform(30);
-// gameLoop();
-// // console.log(platformGenerator);
-
-// function gameLoop(timeStamp){
-//     let deltaTime = timeStamp - lastTime;
-//     context.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-//     context.fillStyle = "brown";
-//     ground.draw(context);
-    
-//     platformGenerator.draw(context);
-//     lastTime = timeStamp;
-//     if(collisionDetector.checkCollision(firstPlayer, ground))
-//         firstPlayer.bumpedGround(ground.position.y);
-//     else firstPlayer.setGrounded(false);
-//     let allPlatforms = platformGenerator.getAllPlatformsArray();
-
-//     for(let index = 0; index< allPlatforms.length; index++){
-//         if(collisionDetector.checkCollision(firstPlayer,allPlatforms[index])){
-            
-//                 firstPlayer.bumpedGround(allPlatforms[index].position.y);
-//                 console.log(
-//                 `PLAYER BUMPED AND HIS POSITION IS  ${firstPlayer.position.x} ${firstPlayer.position.y}`
-//                 );
-//             }
-//         }
-//     // alert("First player and ground got bumped upon");
-//     //to define player
-
-//     firstPlayer.update(deltaTime);
-//     firstPlayer.draw(context);
-    
-//     // console.log(deltaTime);
-//     requestAnimationFrame(gameLoop);
-    
-// }
-
-
-
-
-
-
-
-// //changes color
-// context.fillStyle = '#affa0a';
-// //created a C shape
-// //context.fillRect(70, 70, 20, 10);
-// context.fillRect(40,70,50,10); // __
-// context.fillRect(40,80,10,40); //|
-// context.fillRect(40,110,50,10);// __
-
-// // created a U shape
-// context.fillRect(150,80,10,40); //  |
-// context.fillRect(100,80,10,40);//|
-// context.fillRect(100,110,50,10);// _ 
-
-// //created a T shape
-
-// context.fillRect(185,80,10,40);//|
-// context.fillRect(170,80,40,10);// _ 
-
-
-
-
-
-
-
-
-
-
-
-//Trash ;
-// console.log(document);
-// console.log(document);
-// alert("wait");
-
-
-// document.body.style.backgroundImage = "";
-// let screenSettings = new ScreenSettings(); 
-// console.log(body);
-// gameScreen.addEventListener('mouseover' , (e) => alert("You have hovered your mouse on top of this class"));
-// gameScreen.addEventListener('mouseout' , (e) => alert("You have removed your mouse from this class"));
-
-// gameScreen.addEventListener('mouseout', (e) => resetEffects());
-
+}
