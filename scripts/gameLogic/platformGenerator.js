@@ -66,14 +66,17 @@ class PlatformGenerator{
    
             // context.fillStyle = 'rgb(190, 80 ,200)';
             // context.fillRect(this.allPlatforms[i].position.x, this.allPlatforms[i].position.y, this.maxWidth,this.maxHeight);
-            context.drawImage(this.allPlatforms[i].image, this.allPlatforms[i].position.x-16,this.allPlatforms[i].position.y-65*1.3, 200*0.8, 200*1.28);
+            if(this.allPlatforms[i].image == this.noMushroom){
+                context.drawImage(this.noMushroom, this.allPlatforms[i].position.x-16,this.allPlatforms[i].position.y-65*1.3, 200*0.8, 200*1.28);
+            } else {
+                context.drawImage(this.mushroom, this.allPlatforms[i].position.x-50, this.allPlatforms[i].position.y-110, 200*1.2, 200*1.8 )
+            }
             // context.drawImage(this.noMushroom,this.allPlatforms[i].position.x-30,this.allPlatforms[i].position.y-70);
             
             // context.lineWidth = 1;
             // context.strokeStyle = '#333';
             // context.strokeRect(this.allPlatforms[i].position.x, this.allPlatforms[i].position.y, this.maxWidth, this.maxHeight);
-            // console.log(`Position X ${this.allPlatforms[i].position.x} , Y ${this.allPlatforms[i].position.y} . WIDTH ${this.allPlatforms[i].width}, HEIGHT${this.allPlatforms[i].height} `)
-            // this.allPlatfroms[i].y
+            
         }
     }
 
