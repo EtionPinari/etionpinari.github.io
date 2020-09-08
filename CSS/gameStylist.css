@@ -16,6 +16,11 @@
 		width : 1280px;
 		position : relative;
 	}
+	#purejs
+	{
+		text-align: center;
+		color : rgba(60,60,60,1)
+	}
 	#game-1
 	{
 		position : center;

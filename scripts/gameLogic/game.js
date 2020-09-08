@@ -21,6 +21,10 @@ const frame3 = document.getElementById('frame3');
 const coin = document.getElementById('coin');
 const noMushroom = document.getElementById('noMushroom');
 const mushroom = document.getElementById('mushroom');
+const bigCloud = document.getElementById('bigCloud-1');
+const smallCloudA = document.getElementById('smallCloud-1');
+const smallCloudB = document.getElementById('smallCloud-2');
+const smallCloudC = document.getElementById('smallCloud-3');
 // console.log(frame1);
 const numberOfPlatforms = 35;
 const numberOfCoins = 30;
@@ -37,7 +41,17 @@ const gameScreen = document.querySelector(".screenContainer");
 gameScreen.addEventListener('click', (e) => changeBodyTag(contDiv));
 let restart = false;    
 playGame()
-
+function drawClouds(context){
+    for(let i = 0 ; i<=GAME_WIDTH/150;i++)
+        context.drawImage(bigCloud,i*150,0);
+    
+    context.drawImage(smallCloudA,250,0);
+    context.drawImage(smallCloudB,290,0);
+    context.drawImage(smallCloudC,430,0);
+    context.drawImage(smallCloudA,50,0);
+    context.drawImage(smallCloudB,900,0);
+    context.drawImage(smallCloudC,1100,0);
+}
 function playGame(){
 
 let gameState = GAME_CONSTANT.RUNNING;
@@ -84,10 +98,7 @@ function gameLoop(timeStamp){
     }
 
     gameState = inputController.gameState;
-    if(gameState == GAME_CONSTANT.PAUSE){
-        context.fillStyle = "rgba(0,20,20,0.3)"
-        context.fillRect(0,0,GAME_WIDTH,GAME_HEIGHT);
-    }
+    
 
     let allPlatforms = platformGenerator.getAllPlatformsArray();
     let double = enemyBall.getDouble()
@@ -138,6 +149,10 @@ function gameLoop(timeStamp){
 
         }
     }
+
+    drawClouds(context);
+
+
     if(!lost){
         // update positions
         if(gameState != GAME_CONSTANT.PAUSE)
@@ -182,13 +197,26 @@ function gameLoop(timeStamp){
     }
     if(!restart)
         requestAnimationFrame(gameLoop);
+
+
+    if(gameState == GAME_CONSTANT.PAUSE){
+        context.fillStyle = "rgba(0,20,20,0.3)"
+        context.fillRect(0,0,GAME_WIDTH,GAME_HEIGHT);
+    
+        context.font = "60px Arial";
+        context.fillStyle = "rgba(255,255,255,0.4)";
+        context.textAlign = "center";
+        context.fillText("Paused" , GAME_WIDTH/2, GAME_HEIGHT/2);
+
+    }
+        //end func
 }
 
 
 function showWinScreen(context){
-    context.font = "60px Arial sans-serif";
+    context.font = "60px Arial";
     context.fillStyle = "black";
-    context.fillText(`YOU WON!`,GAME_WIDTH/2-180,GAME_HEIGHT/4-52);
+    context.fillText(`YOU WON!`,GAME_WIDTH/2-120,GAME_HEIGHT/4-52);
 }
 function showLosingScreen(context){
     if(gameBackgroundColor != "blue")
