@@ -16,5 +16,4 @@ var booBats = "https://images-na.ssl-images-amazon.com/images/I/51vfl5nLQKL.jpg"
 var booList = [booDisney, booBats, booDog, booSuperMario, booScary];
 
 elem.setAttribute("src", booDisney);
-alert(elem);
 PicBG.appendChild(elem);
