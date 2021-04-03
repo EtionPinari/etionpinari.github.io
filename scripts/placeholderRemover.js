@@ -1,9 +1,9 @@
-alert("WTF IS GOING ON!");
+
 var PicBG = document.getElementById("placeholder-BG");
 
 var elem = document.createElement("img");
 
-
+console.log(PicBG);
 /*
 INITIALIZE ALL BOO URL STRINGS TO USE AS THE ELEM SOURCE
 */
@@ -16,7 +16,5 @@ var booBats = "https://images-na.ssl-images-amazon.com/images/I/51vfl5nLQKL.jpg"
 var booList = [booDisney, booBats, booDog, booSuperMario, booScary];
 
 elem.setAttribute("src", booDisney);
-document.alert(elem);
-for(pic in PicBG){
-	pic.appendChild(elem);
-}
+alert(elem);
+PicBG.appendChild(elem);
