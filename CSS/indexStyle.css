@@ -15,6 +15,13 @@ a
 	color : blue;
 }
 
+a:hover :not(.flexitem-navbar) {
+	border-style : solid;
+  	border-width: 0.75px;
+  	border-color : white;
+  	background-color : rgba(255,255,255,0.3);
+}
+
 .flexitem-buttons
 {
 	display: flex;
@@ -31,7 +38,7 @@ a
 	top : 0px;
 	position: sticky;
 	width: 100%;
-	background-color: orange;
+	background-color: #74121D;
 	align-items: right;
 }
 
@@ -55,12 +62,13 @@ a
 	padding-right : 120px;
 	padding-left : 36px;
 	margin-top : 20px;
-	color : black;
+	color: rgba(0,0,0,0.9);
+    font-weight: bold;
 }
 .content-cont h2
 {
 	font-weight: bold;
-	color : darkgreen;
+	color : #9EB7E5;
 	padding-top: 30px;
 	font-size : 48px;
 	text-align: center;
@@ -89,7 +97,9 @@ a
 
 .content-white
 {
-	background-color: rgba(232,222,202,0.55);
+
+	background-color: rgba(158,183,229,0.65);
+	/*#6C0E23 = 108,14,35,0.65 ; 9EB7E5 = 158,183,229 */
 	margin-top : 120px;
 }
 .content-cont
@@ -101,7 +111,7 @@ a
 .content h2, h3
 {
 	font-weight: bold;
-	color : darkgreen;
+	color : #74121D;
 	padding-top: 30px;
 	text-align: center;
 	margin-bottom: 20px;
@@ -112,7 +122,7 @@ table
 	{
 
 		box-decoration-break: slice;
-		align-items: center;
+		/*align-items: center;*/
 		/*margin-left : 17%;*/
 		/*align-self: center;*/
 		background-color: rgba(231,231,231,0.2);
@@ -125,7 +135,6 @@ table
 	{	
 		font-size : 20px;
 		/*position: relative;*/
-		text-align: center;
 		color : brown;
 		font-weight: bold;
 		/*margin-right : 5px;*/
@@ -134,13 +143,13 @@ table
 	th
 	{
 		font-size : 28px;
-		color : green;
-		font-weight: bolder;
+		color : #9fe04a;
+		font-weight: bold;
 	}
 
 	.rb
 	{
-		color : red;
+		color : #6C0E23;
 		font-weight: bold;
 	}
 	.small
@@ -182,7 +191,7 @@ table
 
 @media only screen and (max-width: 680px){ /* if in telephone screen*/
 	
-	.btn
+.btn
 {
 	background-color: #9fe04a; 
 	border: none;
@@ -255,7 +264,7 @@ table
 		border-style: solid;
 		padding: 2.5px;
 		border-width: 0.75px;
-		border-color : grey;
+		border-color : black;
 	  	width: 100%;
 	  	margin-bottom: 5px;
 	}
