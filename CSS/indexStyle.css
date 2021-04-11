@@ -148,6 +148,7 @@ table
 		/*position: relative;*/
 		color : brown;
 		font-weight: bold;
+
 		/*margin-right : 5px;*/
 		/*margin-left : 5px;*/
 	}
@@ -187,7 +188,7 @@ table
 	td
 	{
 		background-image : url("../resources/images/sun-bullet.png");
-		background-position: center left;
+		background-position: 0% 60%;
 		background-repeat: no-repeat;
 	}
 
@@ -241,7 +242,7 @@ table
 
 	.content p
 	{
-		font-size : 16px;
+		font-size : 21px;
 	}
 
 	.proj-description li
@@ -287,7 +288,7 @@ table
 	
 	.content p
 	{
-		font-size : 18px;
+		font-size : 21px;
 	}
 	.flexbox-container
 	{
@@ -368,6 +369,7 @@ table
 	td
 	{	
 		padding-left : 36px;
+		padding-top: 0.5em;
 	}
 
 	.flexitem-navbar .btn
