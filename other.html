@@ -3,9 +3,8 @@
 <head>
 	<title>Hidden page</title>
 	<link rel="stylesheet" type="text/css" href="CSS/indexStyle.css">
-		<script type = "module" src="scripts/placeholderRemover.js">
-		
-	</script>
+		<script type = "module" src="scripts/placeholderRemover.js"></script>
+		<script type = "module" src="scripts/modalLogic.js"></script>
 </head>
 <body>
 	<div class = "flexbox-container">
@@ -37,15 +36,36 @@
 
 					<div class="flexitem-buttons">
 						<a href="https://www.linkedin.com/in/etion-pinari-688473121/" target="_blank">
-							<button class="btn">My LinkedIn</button>
+					
+						<div class="btn">
+							
+						</div>
+					
 						</a>
 						<a href="https://github.com/EtionPinari"  target="_blank">
-							<button class="btn-2">My gitHub</button>
+							<div class="btn">
+							</div>
 						</a>
 					</div>		
 				</div>
 	</div>
-	
+	<!-- Trigger the Modal -->
+	<img id="myImg" src="../resources/images/background-image2.jpg" alt="Snow" style="width:100%;max-width:300px">
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- The Close Button -->
+	  <span class="close">&times;</span>
+
+	  <!-- Modal Content (The Image) -->
+	  <img class="modal-content" id="img01">
+
+	  <!-- Modal Caption (Image Text) -->
+	  <div id="caption"></div>
+	</div>
+
+
+
 	<div id = "placeholder-BG">
 	</div>
 	

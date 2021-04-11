@@ -3,111 +3,140 @@
 <head>
 	<title>Etion Pinari</title>
 	<link rel="stylesheet" type="text/css" href="CSS/indexStyle.css">
+	<script type = "module" src="scripts/modalLogic.js"></script>
+	<script type = "module" src="scripts/modalLogic - Copy.js"></script>
+	<script type = "module" src="scripts/modalLogic - Copy (2).js"></script>
 </head>
 <body class = "whitened">
-	<div class = "flexbox-container">
+
+	<div class = "smaller-box">
+		<div class = "flexbox-container">
+			<div class = "flexitem-navbar">
+				<div class = "center">
+				<ul>
+					<a href="index.html">
+						<li>
+							HOME	
+						</li>
+					</a>
+					<a href="about.html" >
+						<li>
+							EXTERNAL LINKS
+						</li>
+					</a>
+					<a href="#youAreAlreadyHere" class = " active">
+						<li>
+							PROJECTS
+						</li>
+					</a>
+					<a href="game-page.html">
+						<li>
+							VIDEOGAME
+						</li>
+					</a>
+				</ul>
+			</div>		
+
+			</div>
+		</div>
 		<div class = "flexitem-navbar">
-			<div class = "center">
-			<ul>
-				<a href="index.html">
-					<li>
-						HOME	
-					</li>
-				</a>
-				<a href="about.html" >
-					<li>
-						EXTERNAL LINKS
-					</li>
-				</a>
-				<a href="#youAreAlreadyHere" class = " active">
-					<li>
-						PROJECTS
-					</li>
-				</a>
-				<a href="game-page.html">
-					<li>
-						VIDEOGAME
-					</li>
-				</a>
-			</ul>
-		</div>		
-
-		<div class="flexitem-buttons">
-			<a href="https://www.linkedin.com/in/etion-pinari-688473121/" target="_blank">
-				<button class="btn">My LinkedIn</button>
-			</a>
-			<a href="https://github.com/EtionPinari"  target="_blank">
-				<button class="btn-2">My gitHub</button>
-			</a>
+			<div class="flexitem-buttons">
+					<a href="https://www.linkedin.com/in/etion-pinari-688473121/" target="_blank">			
+						<div class="btn" id= "linkedin">
+						</div>			
+					</a>
+					<a href="https://github.com/EtionPinari"  target="_blank">
+						<div class="btn" id = "git">
+						</div>
+					</a>
+			</div>
 		</div>
+
+
+		<div class ="content-white">
+			<div class="content">
+				<h2>Projects</h2>
+				<p>
+					During the course of these three years in BSc I have had to take part in many mini-projects, be them in a group or singularly.<br>
+					The most important ones of these projects can be found in my gitHub repositories.  <br>
+				</p>
+				<h2>
+					General description of the projects
+				</h2>
+				<p>
+					<ul class = "proj-description">
+						<li>
+							Online board game "Santorini" (Java)
+						</li>
+						<p>
+							As one of the last projects of bachelors degree we had to recreate a pre-existing game called 
+							<a href="https://www.youtube.com/watch?v=wIJs0k-1ync">Santorini</a> in which people take turns to move their workers and 
+							build different levels of buildings. All this with the purpose of climbing up to the third floor of a building as to win at the game.<br>
+							The game was created with the help of my dear friends 
+							<a href="https://github.com/FraLeone837" target = "_blank">Francesco Leone</a>
+							 and 
+							<a href="https://github.com/simonelemmapolimi" target="_blank">Simone Lemma</a>, and is playable both in CLI-mode (Command Line Input) and GUI (Graphical User Interface).
+							This was one of the most enjoyable projects that I have been part of.<br>
+							Below is shown some screenshots of the game. In-order from left to right (GUI) :<br> 1- The game connection,      2- Input request to choose worker,     3- Input request to move the worker.
+						</p>
+						<div class = "imageToInput">
+								<img id="myImg" src="../resources/images/Game-Connection.png" alt="Runtime connection" style="width:100%;max-width:450px">
+								<!-- The Modal -->
+								<div id="myModal" class="modal">
+
+								  <!-- The Close Button -->
+								  <span class="close">&times;</span>
+
+								  <!-- Modal Content (The Image) -->
+								  <img class="modal-content" id="img01">
+
+								  <div id="caption"></div>
+								</div>
+								<img id="myImg-2" src="../resources/images/Game-Choose-Worker.png" alt="Choosing a worker" style="width:100%;max-width:450px">
+								<!-- The Modal -->
+								<div id="myModal-2" class="modal">
+
+								  <!-- Modal Content (The Image) -->
+								  <img class="modal-content" id="img02">
+								  <span class="close-2">&times;</span>
+
+								  <!-- Modal Caption (Image Text) -->
+								  <div id="caption-2"></div>
+								</div>
+							
+								<img id="myImg-3" src="../resources/images/Game-WhereMove-2ndP.png" alt="Where to move a worker" style="width:100%;max-width:450px">
+									<!-- The Modal -->
+									<div id="myModal-3" class="modal">
+
+									  <!-- Modal Content (The Image) -->
+								  	<img class="modal-content" id="img03">
+								  	<span class="close-3">&times;</span>
+									  <!-- Modal Caption (Image Text) -->
+								  	<div id="caption-3"></div>
+									</div>
+						</div>
+						<li>
+							Fast database-search algorithm (C)
+						</li>
+						<p>
+							The request was to store-delete and search accounts, and relationships between these accounts, with certain criterias (such as accounts with highest number of friends) in a timely manner. This individual project showed students why time-complexity and space in memory are highly important topics to tackle every time you build an algorithm. 
+							<br> The abstract data types I implemented to save all the information and get it back in as little time as possible were: "separate chaining hash-tables" to store the names of accounts as well as <tag class = "rb"> red</tag> and <tag class = "br"> black </tag> trees for the information of the numbers of relationships.
+
+						</p>
+						<li>
+							Electronic fast codifier with Working-Zone Protocol (VHDL)
+						</li>
+						<p>
+							Based on the 
+							<a href="https://www.researchgate.net/publication/3336995_Working-zone_encoding_for_reducing_the_energy_in_microprocessor_address_buses">Working-Zone Encoding Protocol</a>, which saves on energy-consumption on microcomponents, we had to code the electronic part which would take care of the encoding. This is all described with great detail in <a href="https://github.com/EtionPinari/10619348_RL_proj" target="_blank">my VHDL repository</a> although it is only in Italian. <br>
+							For a brief description of how it worked, I implemented an FSM <tag class = "small">(finite state machine)</tag> which would request from the RAM-memory the data in all the adresses, and would then find if the data belonged to one of the Working-Zones or not, flagging it to the RAM and storing it as well. 
+							<br> <br>
+						</p>
+					</ul>
+				</p>
+			</div>
 		</div>
-	</div>
-
-
-	<div class ="content-white">
-	<div class="content">
-		<h2>Projects</h2>
-		<p>
-			During the course of these three years in BSc I have had to take part in many mini-projects, be them in a group or singularly.<br>
-			The most important ones of these projects can be found in my gitHub repositories.  <br>
-		</p>
-		<h3>
-			General description of the projects
-		</h3>
-		<p>
-			<ul class = "proj-description">
-				<li>
-					Online board game "Santorini" (Java)
-				</li>
-				<p>
-					As one of the last projects of bachelors degree we had to recreate a pre-existing game called 
-					<a href="https://www.youtube.com/watch?v=wIJs0k-1ync">Santorini</a> in which people take turns to move their workers and 
-					build different levels of buildings. All this with the purpose of climbing up to the third floor of a building as to win at the game.<br>
-					The game was created with the help of my dear friends 
-					<a href="https://github.com/FraLeone837" target = "_blank">Francesco Leone</a>
-					 and 
-					<a href="https://github.com/simonelemmapolimi" target="_blank">Simone Lemma</a>, and is playable both in CLI-mode (Command Line Input) and GUI (Graphical User Interface).
-					This was one of the most enjoyable projects that I have been part of.<br>
-					Below is shown some screenshots of the game. In-order from left to right (GUI) :<br> 1- The game connection,      2- Input request to choose worker,     3- Input request to move the worker.
-				</p>
-				<div class = "imageToInput">
-					<div class = "image-1">
-						<a href="resources/images/Game-Connection.png">
-							<img src="resources/images/Game-Connection.png" alt = "Connecting to the server" width="480px">
-						</a>
-					</div>
-					<div class = "image-2">
-						<a href="resources/images/Game-Choose-Worker.png">
-							<img src="resources/images/Game-Choose-Worker.png" alt = "Choosing a worker to move" width="480px">
-						</a>
-					</div>
-					<div class = "image-3">
-						<a href="resources/images/Game-WhereMove-2ndP.png">
-							<img src="resources/images/Game-WhereMove-2ndP.png" alt = "Building and moving with the 2nd Player worker" width="480px">
-						</a>
-					</div>
-				</div>
-				<li>
-					Fast database-search algorithm (C)
-				</li>
-				<p>
-					The request was to store-delete and search accounts, and relationships between these accounts, with certain criterias (such as accounts with highest number of friends) in a timely manner. This individual project showed students why time-complexity and space in memory are highly important topics to tackle every time you build an algorithm. 
-					<br> The abstract data types I implemented to save all the information and get it back in as little time as possible were: "separate chaining hash-tables" to store the names of accounts as well as <tag class = "rb"> red</tag> and <tag class = "br"> black </tag> trees for the information of the numbers of relationships.
-
-				</p>
-				<li>
-					Electronic fast codifier with Working-Zone Protocol (VHDL)
-				</li>
-				<p>
-					Based on the 
-					<a href="https://www.researchgate.net/publication/3336995_Working-zone_encoding_for_reducing_the_energy_in_microprocessor_address_buses">Working-Zone Encoding Protocol</a>, which saves on energy-consumption on microcomponents, we had to code the electronic part which would take care of the encoding. This is all described with great detail in <a href="https://github.com/EtionPinari/10619348_RL_proj" target="_blank">my VHDL repository</a> although it is only in Italian. <br>
-					For a brief description of how it worked, I implemented an FSM <tag class = "small">(finite state machine)</tag> which would request from the RAM-memory the data in all the adresses, and would then find if the data belonged to one of the Working-Zones or not, flagging it to the RAM and storing it as well. 
-				</p>
-			</ul>
-		</p>
-	</div>
-	</div>
-	
+	</div>		
 
 </body>
 </html>
