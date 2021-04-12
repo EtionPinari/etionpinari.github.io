@@ -2,6 +2,13 @@
 	font-family : "Courier", sans-serif;
 	color: grey;
 }
+/*IMPORTANT:; Do Not add or remove anything between and including the two rules above and below */
+.smaller-box{
+	margin-left: 10%;
+	margin-right: 10%;
+	position:center;
+}
+
 .whitened{
 	background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.8)), url("../resources/images/background-image.jpg");
 	background-size : cover;
@@ -9,11 +16,7 @@
 	background-position: center;
 }
 
-.smaller-box{
-	margin-left: 10%;
-	margin-right: 10%;
-	position:center;
-}
+
 a
 {
 	text-decoration: none;

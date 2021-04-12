@@ -31,13 +31,13 @@ const numberOfCoins = 30;
 const scoreIncreaser = 100;
 
 const contDiv = document.querySelector(".content-white");
-const GAME_WIDTH = 1280;
-const GAME_HEIGHT = 720;
+const GAME_WIDTH = screen.width*0.8*0.79;
+const GAME_HEIGHT = GAME_WIDTH*0.5635;
 
 const canvasAttributes = document.querySelector('canvas');
+const gameScreen = document.querySelector('.screenContainer');
 canvasAttributes.width = GAME_WIDTH;
 canvasAttributes.height = GAME_HEIGHT;
-const gameScreen = document.querySelector(".screenContainer");
 gameScreen.addEventListener('click', (e) => changeBodyTag(contDiv));
 let restart = false;    
 playGame()
