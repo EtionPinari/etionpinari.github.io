@@ -20,7 +20,8 @@
 a
 {
 	text-decoration: none;
-	color : rgb(220,130,0);
+	color : rgb(0,180,255);
+	font-weight: normal;
 }
 
 
@@ -56,26 +57,44 @@ a
 .proj-description li
 {
 
-	color : cyan;
+	color : rgb(0,0,160);
+	font-weight: bold;
 	display: block;
+	margin-right: 10%;
+	margin-left: 10%; 
 }
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
 .content p
 {
-	padding-right : 120px;
-	padding-left : 36px;
 	margin-top : 20px;
 	color: rgba(0,0,0,0.9);
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-family: "Bell MT";
+    margin-right: 10%;
+    margin-left: 10%;
 }
 .content a:hover {
 	border-style : none;
   	border-width: 0.85px;
-  	padding : 0.5px;
   	border-color : white;
   	background-color : rgba(255,255,255,0.7);
 }
 .content a{
-	padding: 0.5px;
+
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: blue;
+    margin-bottom: 0.01em;
+}
 }
 
 .content-cont h2
@@ -111,7 +130,7 @@ a
 .content-white
 {
 
-	background-color: rgba(158,183,229,0.65);
+	background-color: rgba(245,235,245,0.80);
 	/*#6C0E23 = 108,14,35,0.65 ; 9EB7E5 = 158,183,229 */
 	/*margin-top : 10px;*/
 }
@@ -197,7 +216,10 @@ table
 
 		.imageToInput /*flexbox container is set to wrap so items dont overflow*/
 	{
+		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-evenly;
+		margin: 0% 5% 1.2em 5%;
 	}
 
 
@@ -382,22 +404,22 @@ table
 		background-size: contain;
 		border: 2px solid rgba(255,255,0,0);
 		display: inline-block;
-		width: 43px;
-		height: 43px;
+		width: 60px;
+		height: 60px;
 		position: fixed;
 		bottom : 20px;
-		right: 20px;
+		right: 50px;
 		border-radius: 10px;
 	}
 	.flexitem-navbar #git
 	{
 		background-image: url("../resources/icons/git-icon.png");
+		right: 130px;
 	}
 
 	.flexitem-navbar #linkedin
 	{
 		background-image: url("../resources/icons/linkedin-icon.png");
-		right: 80px;
 	}
 
 
