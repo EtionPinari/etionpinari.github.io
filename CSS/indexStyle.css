@@ -165,6 +165,12 @@ h2, #mpint{
 	padding-top: 0;
 	margin-bottom: -2%;
 }
+.flag{
+	padding-top: 0.3rem; 
+	align-self: center;
+	width: 1.5rem;
+	height: auto;
+}
 table
 	{
 
