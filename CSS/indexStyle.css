@@ -16,6 +16,9 @@
 	background-position: center;
 }
 
+.hidden{
+	display: none;
+}
 
 a
 {
@@ -28,8 +31,7 @@ a
 	list-style: none;
 	text-decoration: none;
 	font-weight: bold;
-	margin-left: 10%;
-	margin-right:10%;
+	margin: 0 10% 0 10%;
 }
 .no-style > li {
 	color: black;
@@ -159,7 +161,10 @@ ul {
 	margin-bottom: 20px;
 	letter-spacing: 3.6px;
 }
-
+h2, #mpint{
+	padding-top: 0;
+	margin-bottom: -2%;
+}
 table
 	{
 
@@ -178,7 +183,7 @@ table
 	{	
 		font-size : 20px;
 		/*position: relative;*/
-		color : brown;
+		color: rgba(0,50,125, 0.85);
 		font-weight: bold;
 
 		/*margin-right : 5px;*/
@@ -235,9 +240,10 @@ table
 
 
 
-
+/* if in telephone screen*/
+/*
 @media only screen and (max-width: 680px)
-{ /* if in telephone screen*/
+{ 
 	
 	.btn
 	{
@@ -287,10 +293,8 @@ table
 
 	.flexitem-navbar a
 	{
-		/*margin-top: 5%;*/
 		text-decoration: none;
 		list-style: none;
-		/*margin-right: 1.6em;*/
 		font-weight: bolder;
 		font-size: 12px;
 		display:  inline;
@@ -318,6 +322,7 @@ table
 	  	border-color : rgba(240,240,240,0.7);		
 	}
 }
+*/
 
 @media only screen and (min-width:680px){ /*	IF ON COMPUTER 			*/
 	

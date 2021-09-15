@@ -58,16 +58,29 @@
 			<div class="content">
 				<h2>Projects</h2>
 				<p>
-					During the course of these three years in BSc I have had to take part in many mini-projects, be them in a group or singularly.<br>
-					The most important ones of these projects can be found in my gitHub repositories.  <br>
+					During the course of the years as a Computer Engineer I have had to take part in many projects, in a group or on my own.<br>
+					The most important ones of these projects can be found in my <a href="https://github.com/EtionPinari?tab=repositories"> GitHub repositories</a>.<br>
 				</p>
-				<h2>
-					General description of the projects
-				</h2>
+				<h3 style="font-size:1.35rem;">
+					Description of the projects
+				</h3>
 				<p>
 					<ul class = "proj-description">
+						<li id="web-dev">
+							Website development (HTML, CSS, JS, VueJS, NuxtJS, July 2021)
+						</li>
+						<p>
+							We had document the implementation of a website and develop a fictitious ICT company called <a href="https://hatgemini.herokuapp.com" target="_blank">Hatgemini</a>. I was in charge of the back-end, employees and articles web-pages. All the people inside the website are fetched through an API and stored in the database. Furthermore I had to implement the chatbot which provides an initial guidance to the structure of the website. Check the documentation for more information in this <a href="https://github.com/EtionPinari/hypermedia-exam/blob/productionBranch/README.md#required-documentation-for-the-evaluators-is-found-below" target="_blank">link</a>.<br>
+							<em> (Open-source webserver, you have to wait for 10 seconds before it opens)</em> 	
+						</p>
+						<li id="iot-impl">
+							IoT device implementation (nesC, TinyOs, NodeRed, IFTTT, June 2021)
+						</li>
+						<p>
+							We designed and implemented a software prototype for a social distancing application. The software sends a notification to the owners' phones, after continous proximity to one-another. This project uses 'TinyOS' to create the IOT nodes and their payloads, requires Cooja to simulate (or any similar program) and finally uses Node-Red and IFTTT to communicate with mobile-phones. The GitHub repository can be found in this <a href="https://github.com/EtionPinari/IOT-project/tree/main/Final%20project" target="_blank">link</a>.
+						</p>
 						<li>
-							Online board game "Santorini" (Java)
+							Online board game "Santorini" (Java, July 2020)
 						</li>
 						<p>
 							As one of the last projects of bachelors degree we had to recreate a pre-existing game called 
@@ -117,21 +130,21 @@
 									</div>
 						</div>
 						<li>
-							Fast Database-search algorithm (C)
+							Electronic fast codifier with Working-Zone Protocol (VHDL, July 2020)
+						</li>
+						<p id="small-device-proj">
+							Based on the 
+							<a href="https://www.researchgate.net/publication/3336995_Working-zone_encoding_for_reducing_the_energy_in_microprocessor_address_buses">Working-Zone Encoding Protocol</a>, which saves on energy-consumption on microcomponents, we had to code the electronic part which would take care of the encoding. This is all described with great detail in <a href="https://github.com/EtionPinari/10619348_RL_proj/blob/master/Descrizione%20progetto%20-%20ita%20version.pdf" target="_blank">my VHDL repository</a> although it is only in Italian. <br>
+							For a brief description of how it worked, I implemented an FSM <tag class = "small">(finite state machine)</tag> which would request from the RAM-memory the data in all the adresses, and would then find if the data belonged to one of the Working-Zones or not, flagging it to the RAM and storing it as well. 
+						</p>
+						<li>
+							Fast Database-search algorithm (C, August 2019)
 						</li>
 						<p id="fast-db-alg">
 							The request was to store-delete and search accounts, and relationships between these accounts, with certain criterias (such as accounts with highest number of friends) in a timely manner. This individual project showed students why time-complexity and space in memory are highly important topics to tackle every time you build an algorithm. 
 							<br> The abstract data types I implemented to save all the information and get it back in as little time as possible were: "separate chaining hash-tables" to store the names of accounts as well as <tag class = "rb"> red</tag> and <tag class = "br"> black </tag>trees for the information of the numbers of relationships.
-
-						</p>
-						<li>
-							Electronic fast codifier with Working-Zone Protocol (VHDL)
-						</li>
-						<p>
-							Based on the 
-							<a href="https://www.researchgate.net/publication/3336995_Working-zone_encoding_for_reducing_the_energy_in_microprocessor_address_buses">Working-Zone Encoding Protocol</a>, which saves on energy-consumption on microcomponents, we had to code the electronic part which would take care of the encoding. This is all described with great detail in <a href="https://github.com/EtionPinari/10619348_RL_proj/blob/master/Descrizione%20progetto%20-%20ita%20version.pdf" target="_blank">my VHDL repository</a> although it is only in Italian. <br>
-							For a brief description of how it worked, I implemented an FSM <tag class = "small">(finite state machine)</tag> which would request from the RAM-memory the data in all the adresses, and would then find if the data belonged to one of the Working-Zones or not, flagging it to the RAM and storing it as well. 
 							<br> <br>
+
 						</p>
 					</ul>
 				</p>
