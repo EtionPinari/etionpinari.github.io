@@ -425,8 +425,8 @@ table
 		background-size: contain;
 		border: 2px solid rgba(255,255,0,0);
 		display: inline-block;
-		width: 60px;
-		height: 60px;
+		width: 90px;
+		height: 90px;
 		position: fixed;
 		bottom : 20px;
 		right: 50px;
@@ -435,7 +435,7 @@ table
 	.flexitem-navbar #git
 	{
 		background-image: url("../resources/icons/git-icon.png");
-		right: 130px;
+		right: 160px;
 	}
 
 	.flexitem-navbar #linkedin
