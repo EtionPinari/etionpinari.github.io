@@ -450,9 +450,9 @@ table
 		background-color : rgba(0,0,255,1);
 	}
 
-	#myImg:hover, #myImg-2:hover, #myImg-3:hover {opacity: 0.7;}
+	img[id*="myImg"]:hover {opacity: 0.7;}
 
-	#myImg, #myImg-2, #myImg-3 {
+	img[id*="myImg"] {
 	  border-radius: 5px;
 	  cursor: pointer;
 	  transition: 0.3s;
