@@ -107,7 +107,7 @@ ul {
     -webkit-text-stroke-color: blue;
     margin-bottom: 0.01em;
 }
-}
+
 
 .content-cont h2
 {
@@ -470,6 +470,7 @@ table
 	  overflow: auto; /* Enable scroll if needed */
 	  background-color: rgb(0,0,0); /* Fallback color */
 	  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	  align-items: center;
 	}
 	/* Modal Content (Image) */
 	.modal-content {
@@ -478,7 +479,7 @@ table
 	  width: 85%;
 	}
 
-	#caption, #caption-2, #caption-3 {
+	div[id*='caption'] {
 	  margin: auto;
 	  display: block;
 	  width: 80%;
@@ -487,6 +488,7 @@ table
 	  color: #ccc;
 	  padding: 10px 0;
 	  height: 150px;
+	  font-size: 1.2rem;
 	}
 
 	/* Add Animation - Zoom in the Modal */
@@ -501,7 +503,7 @@ table
 	}
 
 	/* The Close Button */
-	.close, .close-2, .close-3 {
+	span[class*= 'close'] {
 	  position: absolute;
 	  top: 15px;
 	  right: 35px;
@@ -511,11 +513,14 @@ table
 	  transition: 0.3s;
 	}
 
-	.close:hover, .close:focus, .close-2:hover, .close-2:focus, .close-3:hover, .close-3:focus {
+	span[class*= 'close']:hover, span[class*= 'close']:focus
+	{
 	  color: #bbb;
 	  text-decoration: none;
 	  cursor: pointer;
 	}
+
+	
 
 	/* 100% Image Width on Smaller Screens */
 	@media only screen and (max-width: 700px){
@@ -525,3 +530,4 @@ table
 	
 
 } 
+}

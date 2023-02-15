@@ -1,10 +1,11 @@
-const suffix = "Sky-1";
+const suffix = "Sky-2";
 // everything should be a unique ID
 const idModal = "myModal-" + suffix;
 const idImg = "myImg-" + suffix;
 const idModalImage = "img" + suffix;
 const idCaption = "caption" + suffix;
-const nameCloseButton = "close-" + suffix;
+const nameCloseButton = "close-"+suffix;
+const suffixDestination = suffix + "d";
 
 
 var modal = document.getElementById(idModal);
@@ -13,14 +14,13 @@ var modal = document.getElementById(idModal);
 var img = document.getElementById(idImg);
 var modalImg = document.getElementById(idModalImage);
 var captionText = document.getElementById(idCaption);
+var imgDestination = document.getElementById(suffixDestination);
 img.onclick = function(){
   modal.style.display = "block";
   modal.style.textAlign = "center";
   modal.style.alignContent = "center";
-  modalImg.src = this.src;
-  // Extra code
   modalImg.style.maxHeight = "75%";
-  modalImg.style.maxWidth = "50%";
+  modalImg.style.maxWidth = "75%";
   captionText.innerHTML = this.alt;
 }
 

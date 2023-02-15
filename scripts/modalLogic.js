@@ -6,6 +6,8 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 img.onclick = function(){
   modal.style.display = "block";
+  modal.style.textAlign = "center";
+  modal.style.alignContent = "center";
   modalImg.src = this.src;
   captionText.innerHTML = this.alt;
 }
