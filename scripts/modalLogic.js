@@ -1,21 +1,30 @@
-var modal = document.getElementById("myModal");
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the modal and modal elements
+  var modal = document.getElementById("universalModal");
+  var modalImg = document.getElementById("modalImage");
+  var captionText = document.getElementById("modalCaption");
+  var closeBtn = document.querySelector(".modal .close");
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modal.style.textAlign = "center";
-  modal.style.alignContent = "center";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
+  // Select all images with the class modal-trigger
+  var images = document.querySelectorAll(".modal-trigger");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+  images.forEach(function (img) {
+    img.addEventListener("click", function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+  // Close modal when clicking on the close button
+  closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // Close modal when clicking outside the image
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});

@@ -1,247 +1,245 @@
-*{
-	font-family : "Courier", sans-serif;
+* {
+	font-family: "Courier", sans-serif;
 	color: grey;
 }
+
 /*IMPORTANT:; Do Not add or remove anything between and including the two rules above and below */
-.smaller-box{
+.smaller-box {
 	margin-left: 10%;
 	margin-right: 10%;
-	position:center;
+	position: center;
 }
 
-.whitened{
-	background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.8)), url("../resources/images/background-image.jpg");
-	background-size : cover;
+.whitened {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.8)), url("../resources/images/background-image.jpg");
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.hidden{
+.hidden {
 	display: none;
 }
 
-a
-{
+a {
 	text-decoration: none;
-	color : rgb(0,180,255);
+	color: rgb(0, 180, 255);
 	font-weight: normal;
 }
 
-.no-style{
+.no-style {
 	list-style: none;
 	text-decoration: none;
 	font-weight: bold;
 	margin: 0 10% 0 10%;
 }
-.no-style > li {
+
+.no-style>li {
 	color: black;
 	font-size: 1.2rem;
 }
 
-.flexitem-buttons
-{
+.flexitem-buttons {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 }
 
-.flexbox-container
-{
+.flexbox-container {
 	display: flex;
 	padding: 0px;
-	top : 0px;
+	top: 0px;
 	position: sticky;
 	margin-bottom: 0px;
 	width: 100%;
 	background-color: #74121D;
-	align-items: right;
+	align-items: center;
 }
 
 
-.center
-{
+.center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 
-.proj-description li
-{
+.proj-description li {
 
-	color : rgb(0,0,160);
+	color: rgb(0, 0, 160);
 	font-weight: bold;
 	display: block;
 	margin-right: 10%;
-	margin-left: 10%; 
+	margin-left: 10%;
 }
 
 ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
+	display: block;
+	list-style-type: disc;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 0px;
 }
 
-.content p
-{
-	margin-top : 20px;
-	color: rgba(0,0,0,0.9);
-    /*font-weight: bold;*/
-    font-family: "Bell MT";
-    margin-right: 10%;
-    margin-left: 10%;
+.content p {
+	margin-top: 20px;
+	color: rgba(0, 0, 0, 0.9);
+	/*font-weight: bold;*/
+	font-family: "Bell MT";
+	margin-right: 10%;
+	margin-left: 10%;
 }
+
 .content a:hover {
-	border-style : none;
-  	border-width: 0.85px;
-  	border-color : white;
-  	background-color : rgba(255,255,255,0.7);
-}
-.content a{
-
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: blue;
-    margin-bottom: 0.01em;
+	border-style: none;
+	border-width: 0.85px;
+	border-color: white;
+	background-color: rgba(255, 255, 255, 0.7);
 }
 
+.content a {
 
-.content-cont h2
-{
+	-webkit-text-stroke-width: 0.5px;
+	-webkit-text-stroke-color: blue;
+	margin-bottom: 0.01em;
+}
+
+
+.content-cont h2 {
 	font-weight: bold;
-	color : #9EB7E5;
+	color: #9EB7E5;
 	padding-top: 30px;
-	font-size : 48px;
+	font-size: 48px;
 	text-align: center;
 	margin-bottom: 20px;
 	letter-spacing: 3.6px;
 }
-.content-cont a
-{
-	color : blue;
+
+.content-cont a {
+	color: blue;
 	text-decoration: none;
 }
-.content-cont p
-{
-	padding-right : 120px;
-	padding-left : 36px;
-	margin-top : 20px;
-	font-size : 16px;
-	color : black;
+
+.content-cont p {
+	padding-right: 120px;
+	padding-left: 36px;
+	margin-top: 20px;
+	font-size: 16px;
+	color: black;
 }
-.content .spacer
-{
+
+.content .spacer {
 	font-size: 1px;
-	margin : 20px;
-	color : rgba(0,0,0,0);
+	margin: 20px;
+	color: rgba(0, 0, 0, 0);
 }
 
-.content-white
-{
+.content-white {
 
-	background-color: rgba(245,235,245,0.80);
+	background-color: rgba(245, 235, 245, 0.80);
 	/*#6C0E23 = 108,14,35,0.65 ; 9EB7E5 = 158,183,229 */
 	/*margin-top : 10px;*/
 }
-.content-cont
-{
 
-	background-color: rgba(255,252,222,0.55);
-	margin-top : 24px;	
+.content-cont {
+
+	background-color: rgba(255, 252, 222, 0.55);
+	margin-top: 24px;
 }
-.content h2, h3
-{
+
+.content h2,
+h3 {
 	font-weight: bold;
-	color : #74121D;
+	color: #74121D;
 	padding-top: 30px;
 	text-align: center;
 	margin-bottom: 20px;
 	letter-spacing: 3.6px;
 }
-h2, #mpint{
+
+h2,
+#mpint {
 	padding-top: 0;
 	margin-bottom: -2%;
 }
-.flag{
-	padding-top: 0.3rem; 
+
+.flag {
+	padding-top: 0.3rem;
 	align-self: center;
 	width: 1.5rem;
 	height: auto;
 }
-table
+
+table {
+
+	box-decoration-break: slice;
+	/*align-items: center;*/
+	/*margin-left : 17%;*/
+	/*align-self: center;*/
+	background-color: rgba(231, 231, 231, 0.2);
+	/*border-color: red;*/
+	/*border-width: 10px;*/
+	/*background-color: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,1));*/
+	margin-top: 30px;
+}
+
+td {
+	font-size: 20px;
+	/*position: relative;*/
+	color: rgba(0, 50, 125, 0.85);
+	font-weight: bold;
+
+	/*margin-right : 5px;*/
+	/*margin-left : 5px;*/
+}
+
+th {
+	font-size: 28px;
+	color: #74121D;
+	font-weight: bold;
+	text-align: center;
+}
+
+.rb {
+	color: #6C0E23;
+	font-weight: bold;
+}
+
+.small {
+	font-size: 12px;
+	color: black;
+}
+
+.br {
+	color: black;
+	font-weight: bold;
+}
+
+
+.title-table {
+	/*left : 10%;*/
+	text-align: center;
+	color: black;
+}
+
+
+td {
+	background-image: url("../resources/images/sun-bullet.png");
+	background-position: 0% 60%;
+	background-repeat: no-repeat;
+}
+
+.imageToInput
+
+/*flexbox container is set to wrap so items dont overflow*/
 	{
-
-		box-decoration-break: slice;
-		/*align-items: center;*/
-		/*margin-left : 17%;*/
-		/*align-self: center;*/
-		background-color: rgba(231,231,231,0.2);
-		/*border-color: red;*/
-		/*border-width: 10px;*/
-		/*background-color: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,1));*/
-		margin-top: 30px;
-	}
-
-	td
-	{	
-		font-size : 20px;
-		/*position: relative;*/
-		color: rgba(0,50,125, 0.85);
-		font-weight: bold;
-
-		/*margin-right : 5px;*/
-		/*margin-left : 5px;*/
-	}
-	th
-	{
-		font-size : 28px;
-		color : #74121D;
-		font-weight: bold;
-		text-align: center;
-	}
-
-	.rb
-	{
-		color : #6C0E23;
-		font-weight: bold;
-	}
-	.small
-	{
-		font-size:12px;
-		color: black;
-	}
-	.br
-	{
-		color: black;
-		font-weight: bold;
-	}
-
-
-	.title-table
-	{ 
-		/*left : 10%;*/
-		text-align: center;
-		color : black;
-	}
-
-
-	td
-	{
-		background-image : url("../resources/images/sun-bullet.png");
-		background-position: 0% 60%;
-		background-repeat: no-repeat;
-	}
-
-		.imageToInput /*flexbox container is set to wrap so items dont overflow*/
-	{
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		margin: 0% 5% 1.2em 5%;
-	}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 0% 5% 1.2em 5%;
+}
 
 
 
@@ -330,204 +328,217 @@ table
 }
 */
 
-@media only screen and (min-width:680px){ /*	IF ON COMPUTER 			*/
-	
-	.content p
-	{
-		font-size : 21px;
+@media only screen and (min-width:680px) {
+	/*	IF ON COMPUTER 			*/
+
+	.content p {
+		font-size: 21px;
 	}
-	.flexbox-container
-	{
-		margin : 0px;
+
+	.flexbox-container {
+		margin: 0px;
 		margin-bottom: 20px;
 		z-index: 9;
 	}
-	.proj-description li
-	{
-			font-size: 24px;
+
+	.proj-description li {
+		font-size: 24px;
 	}
-	.flexitem-navbar
-	{
-		top : 0px;
-	 	margin: auto;
-	 	margin-bottom: 12px;
+
+	.flexitem-navbar {
+		top: 0px;
+		margin: auto;
+		margin-bottom: 12px;
 	}
-	.flexitem-navbar a
-	{
+
+	.flexitem-navbar a {
 		margin-top: 5%;
 		text-decoration: none;
 		list-style: none;
 		margin-right: 1.6em;
 		font-weight: bolder;
-		font-size: 24px; /* IMPORTANT */
-		display:  inline-block;
+		font-size: 24px;
+		/* IMPORTANT */
+		display: inline-block;
 	}
-	.flexitem-navbar li
-	{
+
+	.flexitem-navbar li {
 		text-align: center;
 		border-style: solid;
 		padding: 4.5px;
 		border-width: 1.5px;
-		border-color : grey;	
-	 	margin: auto;
-	  	width: 100%;
-	  	color: #EDF9DC;
+		border-color: grey;
+		margin: auto;
+		width: 100%;
+		color: #EDF9DC;
 		font-weight: 550;
 		letter-spacing: 0.08em;
 	}
 
 	/* top navigation bar*/
-	.flexitem-navbar .center a :hover
-	{
+	.flexitem-navbar .center a :hover {
 		padding: 4.5px;
-		border-style : solid;
-	  	border-width: 1.5px;
-	  	border-color : white;
+		border-style: solid;
+		border-width: 1.5px;
+		border-color: white;
 	}
 
 
-	.active li
-	{
+	.active li {
 		padding: 4.5px;
-		border-style : solid;
-	  	border-width: 1.5px;
-	  	border-color : rgba(240,240,240,0.7);		
+		border-style: solid;
+		border-width: 1.5px;
+		border-color: rgba(240, 240, 240, 0.7);
 	}
 
 
-	
 
-	.content .divider
-	{
+
+	.content .divider {
 		font-size: 1px;
-		margin-bottom : 550px;
+		margin-bottom: 550px;
 	}
-	.content .smalldivider
-	{
-		font-size : 1px;
-		margin-bottom : 225px;
+
+	.content .smalldivider {
+		font-size: 1px;
+		margin-bottom: 225px;
 	}
-	table{
-		table-layout: fixed;	
+
+	table {
+		table-layout: fixed;
 		width: 50%;
 	}
 
-	td
-	{	
-		padding-left : 36px;
+	td {
+		padding-left: 36px;
 		padding-top: 0.5em;
 	}
 
-	.flexitem-navbar .btn
-	{
-		
-		background-color: #fff; 
+	.flexitem-navbar .btn {
+
+		background-color: #fff;
 		background-size: contain;
-		border: 2px solid rgba(255,255,0,0);
+		border: 2px solid rgba(255, 255, 0, 0);
 		display: inline-block;
 		width: 90px;
 		height: 90px;
 		position: fixed;
-		bottom : 20px;
+		bottom: 20px;
 		right: 50px;
 		border-radius: 10px;
 	}
-	.flexitem-navbar #git
-	{
+
+	.flexitem-navbar #git {
 		background-image: url("../resources/icons/git-icon.png");
 		right: 160px;
 	}
 
-	.flexitem-navbar #linkedin
-	{
+	.flexitem-navbar #linkedin {
 		background-image: url("../resources/icons/linkedin-icon.png");
 	}
 
 
-	.btn:hover
-	{
-		border: 2px solid rgba(255,255,255,1);
-		background-color : rgba(0,0,255,1);
+	.btn:hover {
+		border: 2px solid rgba(255, 255, 255, 1);
+		background-color: rgba(0, 0, 255, 1);
 	}
 
-	img[id*="myImg"]:hover {opacity: 0.7;}
+	img[id*="myImg"]:hover {
+		opacity: 0.7;
+	}
 
 	img[id*="myImg"] {
-	  border-radius: 5px;
-	  cursor: pointer;
-	  transition: 0.3s;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: 0.3s;
 	}
-	
+
 	.modal {
-	  display: none; /* Hidden by default */
-	  position: fixed; /* Stay in place */
-	  z-index: 10; /* Sit on top */
-	  padding-top: 100px; /* Location of the box */
-	  left: 0;
-	  top: 0;
-	  width: 100%; /* Full width */
-	  height: 100%; /* Full height */
-	  overflow: auto; /* Enable scroll if needed */
-	  background-color: rgb(0,0,0); /* Fallback color */
-	  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-	  align-items: center;
+		display: none;
+		/* Hidden by default */
+		position: fixed;
+		/* Stay in place */
+		z-index: 10;
+		/* Sit on top */
+		padding-top: 100px;
+		/* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%;
+		/* Full width */
+		height: 100%;
+		/* Full height */
+		overflow: auto;
+		/* Enable scroll if needed */
+		background-color: rgb(0, 0, 0);
+		/* Fallback color */
+		background-color: rgba(0, 0, 0, 0.9);
+		/* Black w/ opacity */
+		align-items: center;
 	}
+
 	/* Modal Content (Image) */
 	.modal-content {
-	  margin: auto;
-	  display: block;
-	  width: 85%;
+		margin: auto;
+		display: block;
+		width: 85%;
 	}
 
 	div[id*='caption'] {
-	  margin: auto;
-	  display: block;
-	  width: 80%;
-	  max-width: 700px;
-	  text-align: center;
-	  color: #ccc;
-	  padding: 10px 0;
-	  height: 150px;
-	  font-size: 1.2rem;
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 700px;
+		text-align: center;
+		color: #ccc;
+		padding: 10px 0;
+		height: 150px;
+		font-size: 1.2rem;
 	}
 
 	/* Add Animation - Zoom in the Modal */
-	.modal-content, #caption {
-	  animation-name: zoom;
-	  animation-duration: 0.6s;
+	.modal-content,
+	#caption {
+		animation-name: zoom;
+		animation-duration: 0.6s;
 	}
 
 	@keyframes zoom {
-	  from {transform:scale(0)}
-	  to {transform:scale(1)}
+		from {
+			transform: scale(0)
+		}
+
+		to {
+			transform: scale(1)
+		}
 	}
 
 	/* The Close Button */
-	span[class*= 'close'] {
-	  position: absolute;
-	  top: 15px;
-	  right: 35px;
-	  color: #f1f1f1;
-	  font-size: 40px;
-	  font-weight: bold;
-	  transition: 0.3s;
+	span[class*='close'] {
+		position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
 	}
 
-	span[class*= 'close']:hover, span[class*= 'close']:focus
-	{
-	  color: #bbb;
-	  text-decoration: none;
-	  cursor: pointer;
+	span[class*='close']:hover,
+	span[class*='close']:focus {
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
 	}
 
-	
+
 
 	/* 100% Image Width on Smaller Screens */
-	@media only screen and (max-width: 700px){
-	  .modal-content {
-	    width: 100%;
-	  }
-	
+	@media only screen and (max-width: 700px) {
+		.modal-content {
+			width: 100%;
+		}
 
-} 
+
+	}
 }

@@ -1,234 +1,240 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Etion's projects</title>
-	<link rel="icon" href="../resources/icons/favicon.png" type="image/png" >
+	<link rel="icon" href="../resources/icons/favicon.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="CSS/indexStyle.css">
-	<script type = "module" src="scripts/modalLogic.js"></script>
-	<script type = "module" src="scripts/modalLogic - Copy.js"></script>
-	<script type = "module" src="scripts/modalLogic - Copy (2).js"></script>
-	<script type = "module" src="scripts/modalLogic - Skyline.js"></script>
-	<script type = "module" src="scripts/modalLogic - Skyline 2.js"></script>
-	<script type = "module" src="scripts/modalLogic - App.js"></script>
-	<script type = "module" src="scripts/modalLogic - App-gif.js"></script>
+	<script type="module" src="scripts/modalLogic.js"></script>
 </head>
-<body class = "whitened">
 
-	<div class = "smaller-box">
-		<div class = "flexbox-container">
-			<div class = "flexitem-navbar">
-				<div class = "center">
-				<ul>
-					<a href="index.html">
-						<li>
-							HOME	
-						</li>
-					</a>
-					<a href="about.html" >
-						<li>
-							FIELDS OF COMPETENCE
-						</li>
-					</a>
-					<a href="#youAreAlreadyHere" class = " active">
-						<li>
-							PROJECTS
-						</li>
-					</a>
-					<a href="game-page.html">
-						<li>
-							VIDEOGAME
-						</li>
-					</a>
-				</ul>
-			</div>		
+<body class="whitened">
+
+	<div class="smaller-box">
+		<div class="flexbox-container">
+			<div class="flexitem-navbar">
+				<div class="center">
+					<ul>
+						<a href="index.html">
+							<li>
+								HOME
+							</li>
+						</a>
+						<a class=" active">
+							<li>
+								PROJECTS
+							</li>
+						</a>
+						<a href="game-page.html">
+							<li>
+								VIDEOGAME
+							</li>
+						</a>
+					</ul>
+				</div>
 
 			</div>
 		</div>
-		<div class = "flexitem-navbar">
+		<div class="flexitem-navbar">
 			<div class="flexitem-buttons">
-					<a href="https://www.linkedin.com/in/etion-pinari-688473121/" target="_blank">			
-						<div class="btn" id= "linkedin">
-						</div>			
-					</a>
-					<a href="https://github.com/EtionPinari"  target="_blank">
-						<div class="btn" id = "git">
-						</div>
-					</a>
+				<a href="https://www.linkedin.com/in/etion-pinari-688473121/" target="_blank">
+					<div class="btn" id="linkedin">
+					</div>
+				</a>
+				<a href="https://github.com/EtionPinari" target="_blank">
+					<div class="btn" id="git">
+					</div>
+				</a>
 			</div>
 		</div>
 
 
-		<div class ="content-white">
+		<div class="content-white">
 			<div class="content">
 				<h2>Projects</h2>
 				<p>
-					During the course of the years as a Computer Engineer I have had to take part in many projects, in a group or on my own.<br>
-					The most important ones of these projects can be found in my <a href="https://github.com/EtionPinari?tab=repositories"> GitHub repositories</a>.<br>
+					During the course of the years as a Computer Engineer I have had to take part in many projects, in a
+					group or on my own.<br>
+					The most important ones of these projects can be found in my <a
+						href="https://github.com/EtionPinari?tab=repositories"> GitHub repositories</a>.<br>
 				</p>
 				<h3 style="font-size:1.35rem;">
 					Description of the projects (Programming languages ; Date)
 				</h3>
 				<p>
-					<ul class = "proj-description">
+				<ul class="proj-description">
+					<!-- Universal Modal -->
 
+					<div class="imageToInput">
+						<div id="universalModal" class="modal">
+							<span class="close">&times;</span>
+							<img class="modal-content" id="modalImage">
+							<div id="modalCaption"></div>
+						</div>
+					</div>
+					<li id="mobile-dev">
+						Augmented Reality application development (Flutter, Dart, Google's Firebase ; September 2024)
+					</li>
+					<p>
+						I created a mobile application that shows points of interests (POI) to its users. This allows
+						users to navigate while using the camera without the hassle of looking into a 2D map. <br>
+					</p>
+					<div class="imageToInput">
+						<img id="myImg-AR-1" src="../resources/images/arpin-ar-camera.jpg" alt="AR Camera View"
+							style="width:40%;height:auto;">
+						<img id="myImg-AR-2" src="../resources/images/arpin-home-screen-0.jpg" alt="Home Screen"
+							style="width:40%;height:auto;">
+						<li>
+							Mobile application development (Flutter, Dart, Google's Firebase ; January 2023)
+						</li>
+						<p>
+							We created an e-commerce mobile application called "DIMA e-Shop" with a minimalistic design
+							look
+							in which the main buying point is the picture of the product. The application sends orders
+							and payments to a backend server. The code can be found in the following <a
+								href="https://github.com/itsPeetah/dima-2022-eshopping" target="_blank">link</a>. <br>
+						</p>
+						<div class="imageToInput">
+							<img id="myImg-App-1" src="../resources/AppInfo/ApplikacionMap.png"
+								alt="In the map section of the application we show the current position of the user with all the shops nearby him."
+								style="width:22%;height:auto;">
+							<img id="myImg-App-2" src="../resources/AppInfo/HomeScreen.png"
+								alt="Application's home screen and how buying products looks"
+								style="width:22%;height:auto;">
+						</div>
 						<li id="app-dev">
 							Skyline Queries in Big Data application (Python, Spark ; December 2022)
 						</li>
 						<p>
-							For my thesis I had to implement a new faster algorithm to find Skyline queries in Big Data in the fastest way possible. I achieved this through coarse filtering using few significant points to remove at least to 66% of the points that were not part of the Skyline.  
-							The code can be viewed in the following <a href="https://github.com/EtionPinari/Parallel-skyline-queries" target="_blank">link</a>. <br>
+							For my thesis I had to implement a new faster algorithm to find Skyline queries in Big Data
+							in
+							the fastest way possible. I designed a new method that would find the queries in less than
+							half
+							the time of the fastest query ever designed until then.
+							The code can be viewed in the following <a
+								href="https://github.com/EtionPinari/Parallel-skyline-queries" target="_blank">link</a>.
+							<br>
 						</p>
-						<div class = "imageToInput">
-							<img id="myImg-Sky-1" src="../resources/Thesis/What-is-skyline.png" alt="What the skyline operator finds (orange) vs all dataset (blue)" style="width:30%;">
-							<!-- The Modal -->
-							<div id="myModal-Sky-1" class="modal">
+						<div class="imageToInput">
+							<img id="myImg-Sky-1" src="../resources/Thesis/What-is-skyline.png"
+								alt="What the skyline operator finds (orange) vs all dataset (blue)" style="width:30%;">
 
-							  <!-- The Close Button -->
-							  <span class="close-Sky-1">&times;</span>
-
-							  <!-- Modal Content (The Image) -->
-							  <img class="modal-content" id="imgSky-1">
-
-							  <div id="captionSky-1">
-							  	We compare each point to each other point to see if the current point is the one closer down and to the left (in layman's terms).
-							  </div>
-							</div>
-							<img id="myImg-Sky-2" src="../resources/Thesis/Rep Filt- X-Axis.png" alt="Faster method of choosing significant points" style="width:30%;">
-							<img id="myImg-Sky-2d" alt="How we choose the significant points" src="../resources/Thesis/gif.gif" style="width:30%;display:none;">
-							<!-- The Modal -->
-							<div id="myModal-Sky-2" class="modal">
-
-							  <!-- The Close Button -->
-							  <span class="close-Sky-2">&times;</span>
-
-							  <!-- Modal Content (The Image) -->
-							  <img class="modal-content" id="imgSky-2" src="../resources/Thesis/gif.gif" style="width:50%;">
-
-							  <div id="captionSky-2"></div>
-							</div>
 						</div>
 						<li id="web-dev">
-							Mobile application development (Flutter, Dart, Firebase ; July 2022)
-						</li>
-						<p>
-							We created an e-commerce mobile application called "DIMA e-Shop" with a minimalistic design look in which the main buying point is the picture of the product. The application had to send orders and payments to a backend server. The code can be found in the following  <a href="https://github.com/itsPeetah/dima-2022-eshopping" target="_blank">link</a>. <br>
-						</p>
-						<div class = "imageToInput">
-							<img id="myImg-App-1" src="../resources/AppInfo/ApplikacionMap.png" alt="In the map section of the application we show the current position of the user with all the shops nearby him." style="width:22%;height:auto;">
-							<!-- The Modal -->
-							<div id="myModal-App-1" class="modal">
-
-							  <!-- The Close Button -->
-							  <span class="close-App-1">&times;</span>
-
-							  <!-- Modal Content (The Image) -->
-							  <img class="modal-content" id="imgApp-1">
-
-							  <div id="captionApp-1">
-							  	
-							  </div>
-							</div>
-							<img id="myImg-App-2" src="../resources/AppInfo/HomeScreen.png" alt="Application's home screen and how buying products looks" style="width:22%;height:auto;">
-							<!-- The Modal -->
-							<div id="myModal-App-2" class="modal">
-
-							  <!-- The Close Button -->
-							  <span class="close-App-2">&times;</span>
-
-							  <!-- Modal Content (The Image) -->
-							  <img class="modal-content" id="imgApp-2" src="../resources/AppInfo/Gif-of-work.gif">
-
-							  <div id="captionApp-2"></div>
-							</div>
-						</div>
-						<li>
 							Website development (VueJS, NuxtJS, HTML, CSS ; July 2021)
 						</li>
 						<p>
-							We had to document the implementation of a website and develop a fictitious ICT company called Hatgemini. I was in charge of the back-end, employees and articles web-pages. All the people inside the website are fetched through an API and stored in the database. Furthermore I had to implement the chatbot which provides an initial guidance to the structure of the website. Check the documentation for more information in this <a href="https://github.com/EtionPinari/hypermedia-exam/blob/productionBranch/README.md#required-documentation-for-the-evaluators-is-found-below" target="_blank">link</a>. The server is down and not in use anymore. <br>	
+							We had to document the implementation of a website and develop a fictitious ICT company
+							called
+							Hatgemini. I was in charge of the back-end, employees and articles web-pages. All the people
+							inside the website are fetched through an API and stored in the database. Furthermore I had
+							to
+							implement the chatbot which provides an initial guidance to the structure of the website.
+							Check
+							the documentation for more information in this <a
+								href="https://github.com/EtionPinari/hypermedia-exam/blob/productionBranch/README.md#required-documentation-for-the-evaluators-is-found-below"
+								target="_blank">link</a>. The server is down and not in use anymore. <br>
 						</p>
 						<li id="iot-impl">
 							IoT device implementation (nesC, TinyOs, NodeRed, IFTTT ; June 2021)
 						</li>
 						<p>
-							We designed and implemented a software prototype for a social distancing application. The software sends a notification to the owners' phones, after continous proximity to one-another. This project uses 'TinyOS' to create the IOT nodes and their payloads, requires Cooja to simulate (or any similar program) and finally uses Node-Red and IFTTT to communicate with mobile-phones. The GitHub repository can be found in this <a href="https://github.com/EtionPinari/IOT-project/tree/main/Final%20project" target="_blank">link</a>.
+							We designed and implemented a software prototype for a social distancing application. The
+							software sends a notification to the owners' phones, after continous proximity to
+							one-another.
+							This project uses 'TinyOS' to create the IOT nodes and their payloads, requires Cooja to
+							simulate (or any similar program) and finally uses Node-Red and IFTTT to communicate with
+							mobile-phones. The GitHub repository can be found in this <a
+								href="https://github.com/EtionPinari/IOT-project/tree/main/Final%20project"
+								target="_blank">link</a>.
 						</p>
 						<li id="back-end-dev">
-							Webserver development (Eclipse, JavaEE,  HTML, CSS ; February 2021)
+							Webserver development (Eclipse, JavaEE, HTML, CSS ; February 2021)
 						</li>
 						<p>
-							We had to create a working Webserver to handle submissions of reviews of videogames that the user had played and creating a leaderboard with the top 10 games of all time.
-							The code can be found in the following <a href="https://github.com/marcopetri98/MarketingApp_Java_DB2" target="_blank">link</a>. The local server is down and not in use anymore. <br>	
+							We had to create a working Webserver to handle submissions of reviews of videogames that the
+							user had played and creating a leaderboard with the top 10 games of all time.
+							The code can be found in the following <a
+								href="https://github.com/marcopetri98/MarketingApp_Java_DB2" target="_blank">link</a>.
+							The
+							local server is down and not in use anymore. <br>
 						</p>
+						<div class="imageToInput">
+							<img id="myImg-Webserver" src="../resources/images/java-webserver-img0.png"
+								alt="Java Webserver Image">
+						</div>
 						<li>
 							Online board game "Santorini" (Java ; July 2020)
 						</li>
 						<p>
-							As one of the last projects of bachelors degree we had to recreate a pre-existing game called 
-							<a href="https://www.youtube.com/watch?v=wIJs0k-1ync" target="_blank">Santorini</a> in which people take turns to move their workers and 
-							build different levels of buildings. All this with the purpose of climbing up to the third floor of a building as to win at the game.<br>
-							The game is playable both in CLI-mode (Command Line Input) and GUI (Graphical User Interface).
+							As one of the last projects of bachelors degree we had to recreate a pre-existing game
+							called
+							<a href="https://www.youtube.com/watch?v=wIJs0k-1ync" target="_blank">Santorini</a> in which
+							people take turns to move their workers and
+							build different levels of buildings. All this with the purpose of climbing up to the third
+							floor
+							of a building as to win at the game.<br>
+							The game is playable both in CLI-mode (Command Line Input) and GUI (Graphical User
+							Interface).
 							This was one of the most enjoyable projects that I have been part of.<br>
-							Below is shown some screenshots of the game. In-order from left to right (GUI) :<br> 1- The game connection,      2- Input request to choose worker,     3- Input request to move the worker.
+							Below is shown some screenshots of the game. In-order from left to right (GUI) :<br> 1- The
+							game
+							connection, 2- Input request to choose worker, 3- Input request to move the worker.
 						</p>
-						<div class = "imageToInput">
-								<img id="myImg" src="../resources/images/Game-Connection.png" alt="Runtime connection" style="width:30%;">
-								<!-- The Modal -->
-								<div id="myModal" class="modal">
+						<div class="imageToInput">
+							<img id="myImg" src="../resources/images/Game-Connection.png" alt="Runtime connection"
+								style="width:30%;">
 
-								  <!-- The Close Button -->
-								  <span class="close">&times;</span>
+							<img id="myImg-2" src="../resources/images/Game-Choose-Worker.png" alt="Choosing a worker"
+								style="width:30%;">
 
-								  <!-- Modal Content (The Image) -->
-								  <img class="modal-content" id="img01">
-
-								  <div id="caption"></div>
-								</div>
-								<img id="myImg-2" src="../resources/images/Game-Choose-Worker.png" alt="Choosing a worker" style="width:30%;">
-								<!-- The Modal -->
-								<div id="myModal-2" class="modal">
-
-								  <!-- Modal Content (The Image) -->
-								  <img class="modal-content" id="img02">
-								  <span class="close-2">&times;</span>
-
-								  <!-- Modal Caption (Image Text) -->
-								  <div id="caption-2"></div>
-								</div>
-							
-								<img id="myImg-3" src="../resources/images/Game-WhereMove-2ndP.png" alt="Where to move a worker" style="width:30%;">
-									<!-- The Modal -->
-									<div id="myModal-3" class="modal">
-
-									  <!-- Modal Content (The Image) -->
-								  	<img class="modal-content" id="img03">
-								  	<span class="close-3">&times;</span>
-									  <!-- Modal Caption (Image Text) -->
-								  	<div id="caption-3"></div>
-									</div>
+							<img id="myImg-3" src="../resources/images/Game-WhereMove-2ndP.png"
+								alt="Where to move a worker" style="width:30%;">
 						</div>
 						<li>
 							Electronic fast codifier with Working-Zone Protocol (VHDL ; July 2020)
 						</li>
 						<p id="small-device-proj">
-							Based on the 
-							<a href="https://www.researchgate.net/publication/3336995_Working-zone_encoding_for_reducing_the_energy_in_microprocessor_address_buses">Working-Zone Encoding Protocol</a>, which saves on energy-consumption on microcomponents, we had to code the electronic part which would take care of the encoding. This is all described with great detail in <a href="https://github.com/EtionPinari/10619348_RL_proj/blob/master/Descrizione%20progetto%20-%20ita%20version.pdf" target="_blank">my VHDL repository</a> although it is only in Italian. <br>
-							For a brief description of how it worked, I implemented an FSM <tag class = "small">(finite state machine)</tag> which would request from the RAM-memory the data in all the adresses, and would then find if the data belonged to one of the Working-Zones or not, flagging it to the RAM and storing it as well. 
+							Based on the
+							<a
+								href="https://www.researchgate.net/publication/3336995_Working-zone_encoding_for_reducing_the_energy_in_microprocessor_address_buses">Working-Zone
+								Encoding Protocol</a>, which saves on energy-consumption on microcomponents, we had to
+							code
+							the electronic part which would take care of the encoding. This is all described with great
+							detail in <a
+								href="https://github.com/EtionPinari/10619348_RL_proj/blob/master/Descrizione%20progetto%20-%20ita%20version.pdf"
+								target="_blank">my VHDL repository</a> although it is only in Italian. <br>
+							For a brief description of how it worked, I implemented an FSM <tag class="small">(finite
+								state
+								machine)</tag> which would request from the RAM-memory the data in all the adresses, and
+							would then find if the data belonged to one of the Working-Zones or not, flagging it to the
+							RAM
+							and storing it as well.
 						</p>
 						<li>
 							Fast Database-search algorithm (C ; August 2019)
 						</li>
-						<p id="fast-db-alg">
-							The request was to store-delete and search accounts, and relationships between these accounts, with certain criterias (such as accounts with highest number of friends) in a timely manner. This individual project showed students why time-complexity and space in memory are highly important topics to tackle every time you build an algorithm. 
-							<br> The abstract data types I implemented to save all the information and get it back in as little time as possible were: "separate chaining hash-tables" to store the names of accounts as well as <tag class = "rb"> red</tag> and <tag class = "br"> black </tag>trees for the information of the numbers of relationships.
+						<p>
+							The request was to store-delete and search accounts, and relationships between these
+							accounts,
+							with certain criterias (such as accounts with highest number of friends) in a timely manner.
+							This individual project showed students why time-complexity and space in memory are highly
+							important topics to tackle every time you build an algorithm.
+							<br> The abstract data types I implemented to save all the information and get it back in as
+							little time as possible were: "separate chaining hash-tables" to store the names of accounts
+							as
+							well as <tag class="rb"> red</tag> and <tag class="br"> black </tag>trees for the
+							information of
+							the numbers of relationships.
 							<br> <br>
 
 						</p>
-					</ul>
+				</ul>
 				</p>
 			</div>
 		</div>
-	</div>		
+	</div>
 
 </body>
+
 </html>
