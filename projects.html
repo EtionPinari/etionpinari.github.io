@@ -3,7 +3,7 @@
 
 <head>
 	<title>Etion's projects</title>
-	<link rel="icon" href="../resources/icons/favicon.png" type="image/png">
+	<link rel="icon" href="resources/icons/favicon.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="CSS/indexStyle.css">
 	<script type="module" src="scripts/modalLogic.js"></script>
 </head>
@@ -23,11 +23,6 @@
 						<a class=" active">
 							<li>
 								PROJECTS
-							</li>
-						</a>
-						<a href="game-page.html">
-							<li>
-								VIDEOGAME
 							</li>
 						</a>
 					</ul>
@@ -80,10 +75,10 @@
 						users to navigate while using the camera without the hassle of looking into a 2D map. <br>
 					</p>
 					<div class="imageToInput">
-						<img id="myImg-AR-1" src="../resources/images/arpin-ar-camera.jpg" alt="AR Camera View"
-							style="width:40%;height:auto;">
-						<img id="myImg-AR-2" src="../resources/images/arpin-home-screen-0.jpg" alt="Home Screen"
-							style="width:40%;height:auto;">
+						<img class="modal-trigger" id="myImg-AR-1" src="resources/images/arpin-ar-camera.jpg"
+							alt="AR Camera View" style="width:18%;height:auto;">
+						<img class="modal-trigger" id="myImg-AR-2" src="resources/images/arpin-home-screen-0.jpg"
+							alt="Home Screen" style="width:18%;height:auto;">
 						<li>
 							Mobile application development (Flutter, Dart, Google's Firebase ; January 2023)
 						</li>
@@ -95,12 +90,12 @@
 								href="https://github.com/itsPeetah/dima-2022-eshopping" target="_blank">link</a>. <br>
 						</p>
 						<div class="imageToInput">
-							<img id="myImg-App-1" src="../resources/AppInfo/ApplikacionMap.png"
+							<img class="modal-trigger" id="myImg-App-1" src="resources/AppInfo/ApplikacionMap.png"
 								alt="In the map section of the application we show the current position of the user with all the shops nearby him."
-								style="width:22%;height:auto;">
-							<img id="myImg-App-2" src="../resources/AppInfo/HomeScreen.png"
+								style="width:21%;height:auto;">
+							<img class="modal-trigger" id="myImg-App-2" src="resources/AppInfo/HomeScreen.png"
 								alt="Application's home screen and how buying products looks"
-								style="width:22%;height:auto;">
+								style="width:21%;height:auto;">
 						</div>
 						<li id="app-dev">
 							Skyline Queries in Big Data application (Python, Spark ; December 2022)
@@ -115,10 +110,10 @@
 								href="https://github.com/EtionPinari/Parallel-skyline-queries" target="_blank">link</a>.
 							<br>
 						</p>
-						<div class="imageToInput">
-							<img id="myImg-Sky-1" src="../resources/Thesis/What-is-skyline.png"
-								alt="What the skyline operator finds (orange) vs all dataset (blue)" style="width:30%;">
-
+						<div class="center">
+							<img class="modal-trigger" id="myImg-Sky-1" src="resources/Thesis/What-is-skyline.png"
+								alt="What the skyline operator finds (orange) vs all dataset (blue)"
+								style="width:100%;">
 						</div>
 						<li id="web-dev">
 							Website development (VueJS, NuxtJS, HTML, CSS ; July 2021)
@@ -160,8 +155,9 @@
 							local server is down and not in use anymore. <br>
 						</p>
 						<div class="imageToInput">
-							<img id="myImg-Webserver" src="../resources/images/java-webserver-img0.png"
-								alt="Java Webserver Image">
+							<img class="modal-trigger" id="myImg-Webserver"
+								src="resources/images/java-webserver-img0.png" alt="Webserver log-in page"
+								style="width:70%;height:auto;">
 						</div>
 						<li>
 							Online board game "Santorini" (Java ; July 2020)
@@ -182,14 +178,12 @@
 							connection, 2- Input request to choose worker, 3- Input request to move the worker.
 						</p>
 						<div class="imageToInput">
-							<img id="myImg" src="../resources/images/Game-Connection.png" alt="Runtime connection"
-								style="width:30%;">
 
-							<img id="myImg-2" src="../resources/images/Game-Choose-Worker.png" alt="Choosing a worker"
-								style="width:30%;">
+							<img class="modal-trigger" id="myImg-2" src="resources/images/Game-Choose-Worker.png"
+								alt="Choosing a worker" style="width:40%;">
 
-							<img id="myImg-3" src="../resources/images/Game-WhereMove-2ndP.png"
-								alt="Where to move a worker" style="width:30%;">
+							<img class="modal-trigger" id="myImg-3" src="resources/images/Game-WhereMove-2ndP.png"
+								alt="Where to move a worker" style="width:40%;">
 						</div>
 						<li>
 							Electronic fast codifier with Working-Zone Protocol (VHDL ; July 2020)
@@ -204,9 +198,9 @@
 							detail in <a
 								href="https://github.com/EtionPinari/10619348_RL_proj/blob/master/Descrizione%20progetto%20-%20ita%20version.pdf"
 								target="_blank">my VHDL repository</a> although it is only in Italian. <br>
-							For a brief description of how it worked, I implemented an FSM <tag class="small">(finite
-								state
-								machine)</tag> which would request from the RAM-memory the data in all the adresses, and
+							For a brief description of how it worked, I implemented a finite state machine which would
+							request from the
+							RAM-memory the data in all the adresses, and
 							would then find if the data belonged to one of the Working-Zones or not, flagging it to the
 							RAM
 							and storing it as well.
