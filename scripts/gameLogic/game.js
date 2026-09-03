@@ -30,7 +30,7 @@ const numberOfPlatforms = 35;
 const numberOfCoins = 30;
 const scoreIncreaser = 100;
 
-const contDiv = document.querySelector(".content-white");
+const contDiv = document.querySelector(".content-white") || document.body;
 const GAME_WIDTH = screen.width*0.8*0.79;
 const GAME_HEIGHT = GAME_WIDTH*0.5635;
 

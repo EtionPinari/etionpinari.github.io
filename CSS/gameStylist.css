@@ -1,3 +1,9 @@
+/* Game sprite images are canvas-only assets; never render them in the page. */
+.image_files
+{
+	display: none;
+}
+
 @media only screen and (min-width : 768px){
 
 	.screenContainer
